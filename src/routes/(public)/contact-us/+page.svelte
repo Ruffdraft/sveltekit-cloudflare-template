@@ -60,52 +60,56 @@
   <title>Contact Us - {WEBSITE_NAME}</title>
 </svelte:head>
 
-<div class="flex flex-col lg:flex-row mx-auto my-4 min-h-[70vh] place-items-center lg:place-items-start">
-  <div class="max-w-md lg:max-w-lg p-4 lg:mr-8">
+<div class="max-w-6xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-10">
+  <div class="lg:w-1/2">
     <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
-    <p class="text-lg">Talk to our team to:</p>
-    <ul class="list-disc pl-6 py-4 space-y-1">
+    <p class="text-lg mb-4">Talk to our team to:</p>
+    <ul class="list-disc list-inside mb-4 space-y-1">
       <li>Request a live demo</li>
       <li>Discuss your needs</li>
       <li>Request a quote</li>
       <li>Get answers to technical questions</li>
     </ul>
-    <p>We’ll get in touch after you submit the form.</p>
-    <p class="text-sm pt-8">We never share your data with third parties.</p>
+    <p class="text-sm text-gray-600">We never share your data with third parties.</p>
   </div>
 
-  <div class="flex-grow max-w-md mx-auto p-4">
+  <div class="lg:w-1/2">
     {#if show_success}
-      <div class="card shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-4">Thank you!</h2>
-        <p>Your message has been received. We'll respond soon.</p>
+      <div class="card shadow p-6 bg-white rounded">
+        <h2 class="text-xl font-bold mb-4">Thank you!</h2>
+        <p>Your message has been received. We'll be in touch shortly.</p>
       </div>
     {:else}
-      <form method="POST" action="" use:enhance={handle_submit} class="card shadow-lg p-6">
+      <form
+        method="POST"
+        action=""
+        use:enhance={handle_submit}
+        class="card shadow p-6 bg-white rounded space-y-4"
+      >
         {#each form_fields as field}
-          <label for={field.id} class="block mb-4">
-            <span class="block font-medium mb-1">{field.label}</span>
+          <div>
+            <label for={field.id} class="block font-semibold mb-1">{field.label}</label>
             {#if field.input_type === "textarea"}
               <textarea
                 id={field.id}
                 name={field.id}
                 rows="4"
-                class="textarea textarea-bordered w-full {errors[field.id] ? 'textarea-error' : ''}"
                 autocomplete={field.autocomplete}
+                class="textarea textarea-bordered w-full"
               ></textarea>
             {:else}
               <input
                 id={field.id}
                 name={field.id}
                 type={field.input_type}
-                class="input input-bordered w-full {errors[field.id] ? 'input-error' : ''}"
                 autocomplete={field.autocomplete}
+                class="input input-bordered w-full"
               />
             {/if}
             {#if errors[field.id]}
               <p class="text-error text-sm mt-1">{errors[field.id]}</p>
             {/if}
-          </label>
+          </div>
         {/each}
 
         <div class="mb-4">
@@ -113,7 +117,7 @@
         </div>
 
         {#if error_message}
-          <p class="text-error text-sm mb-2">{error_message}</p>
+          <p class="text-error text-sm">{error_message}</p>
         {/if}
 
         <button type="submit" class="btn btn-primary w-full" disabled={is_waiting}>

@@ -1,13 +1,34 @@
-name = "error-logger"
-main = "src/index.js"
-compatibility_date = "2023-11-22"
+name = "tentrait-app"
+compatibility_date = "2024-05-30"
+compatibility_flags = ["nodejs_compat"]
 
-[[queues.consumers]]
-queue = "error-queue"
-max_batch_size = 1  # the maximum number of messages to process in a single batch
-max_batch_timeout = 30  # the maximum time to wait for messages in a batch (in seconds)
+main = "src/entry-server.ts"  # default for SvelteKit if not using Vite adapter
+build.command = "npm run build"
+
+[site]
+bucket = "./.svelte-kit/cloudflare"
+entry-point = "."
+
+[vars]
+TURNSTILE_SECRET = "your_turnstile_secret_here"
 
 [[r2_buckets]]
 binding = "TENTRAIT_UPLOADS"
-bucket_name = "tentrait-uploads"
-preview_bucket_name = "tentrait-uploads"
+bucket_name = "tentrait-pcap"
+
+[[kv_namespaces]]
+binding = "TENTRAIT_KV"
+id = "your_kv_namespace_id"             # from `wrangler kv:namespace list`
+preview_id = "your_kv_preview_namespace_id"  # optional for `wrangler dev`
+
+[[queues.producers]]
+binding = "TENTRAIT_ANALYSIS_QUEUE"
+queue = "analysis-queue"
+
+[[queues.consumers]]
+queue = "analysis-queue"
+consumer_script = "analysis-worker"
+
+[env.production]
+name = "tentrait-app"
+route = "https://tentrait.com/*"

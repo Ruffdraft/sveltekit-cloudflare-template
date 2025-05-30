@@ -8,5 +8,6 @@ max_batch_size = 1  # the maximum number of messages to process in a single batc
 max_batch_timeout = 30  # the maximum time to wait for messages in a batch (in seconds)
 
 [[r2_buckets]]
-binding = 'ERROR_BUCKET'
-bucket_name = 'error-bucket'
+binding = "TENTRAIT_UPLOADS"
+bucket_name = "uploads"
+preview_bucket_name = "uploads"

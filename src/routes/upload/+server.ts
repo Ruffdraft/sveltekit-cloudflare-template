@@ -45,6 +45,14 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 
 	try {
 		await platform.env.TENTRAIT_UPLOADS.put(filename, arrayBuffer);
+
+		// ✅ Enqueue for analysis
+		await platform.env.TENTRAIT_ANALYSIS_QUEUE.send({
+			filename,
+			uploadedAt: Date.now(),
+			ip
+		});
+
 		return new Response(`File ${filename} uploaded successfully.`, { status: 200 });
 	} catch (err) {
 		console.error('R2 Upload Error:', err);

@@ -1,4 +1,3 @@
-/// FILE: src/routes/contact-us/+page.svelte
 <script>
   import { WEBSITE_NAME, TURNSTILE_SITEKEY } from "$config";
   import { enhance, applyAction } from "$app/forms";

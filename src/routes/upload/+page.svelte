@@ -1,17 +1,33 @@
 <script lang="ts">
 	let message: string | null = null;
+	let messageType: 'success' | 'error' | null = null;
+	let uploading = false;
+	let selectedFile: File | null = null;
 
 	async function handleUpload(event: SubmitEvent) {
 		event.preventDefault();
 		const form = event.currentTarget as HTMLFormElement;
 		const formData = new FormData(form);
 
-		const res = await fetch('/upload', {
-			method: 'POST',
-			body: formData
-		});
+		uploading = true;
+		message = null;
 
-		message = await res.text();
+		try {
+			const res = await fetch('/upload', {
+				method: 'POST',
+				body: formData
+			});
+
+			messageType = res.ok ? 'success' : 'error';
+			message = await res.text();
+		} catch (err) {
+			messageType = 'error';
+			message = 'Upload failed.';
+		} finally {
+			uploading = false;
+			form.reset();
+			selectedFile = null;
+		}
 	}
 </script>
 
@@ -23,17 +39,36 @@
 		name="file"
 		accept=".pcap"
 		required
+		on:change={(e) => {
+			const file = e.target.files?.[0];
+			if (file) {
+				if (file.size > 10_000_000) {
+					alert('Max file size is 10MB');
+					e.target.value = '';
+					selectedFile = null;
+				} else {
+					selectedFile = file;
+				}
+			}
+		}}
 		class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
 	/>
+
+	{#if selectedFile}
+		<p class="text-sm text-gray-600">Selected file: {selectedFile.name}</p>
+	{/if}
 
 	<button
 		type="submit"
 		class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+		disabled={uploading}
 	>
-		Upload
+		{uploading ? 'Uploading…' : 'Upload'}
 	</button>
 </form>
 
 {#if message}
-	<p class="mt-4 text-green-600 font-medium">{message}</p>
+	<p class={`mt-4 font-medium ${messageType === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+		{message}
+	</p>
 {/if}

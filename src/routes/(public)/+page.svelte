@@ -9,7 +9,7 @@
       link: "/upload",
       link_text: "Upload PCAP",
       new_page: false,
-      svg_content: `<path d=\"M4 4L20 20\" stroke=\"currentColor\" stroke-width=\"1.5\"/>`
+      svg_content: `<path d="M4 4L20 20" stroke="currentColor" stroke-width="1.5"/>`
     },
     {
       name: "Access Segmentation",
@@ -18,7 +18,7 @@
       link: "/services/vpn",
       link_text: "Learn More",
       new_page: false,
-      svg_content: `<circle cx=\"12\" cy=\"12\" r=\"6\" stroke=\"currentColor\" stroke-width=\"1.5\"/>`
+      svg_content: `<circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.5"/>`
     },
     {
       name: "Cloud-Edge Architecture",
@@ -27,7 +27,7 @@
       link: "https://developers.cloudflare.com",
       link_text: "Cloudflare Stack",
       new_page: true,
-      svg_content: `<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"/>`
+      svg_content: `<rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.5"/>`
     },
     {
       name: "Discovery Pack",
@@ -36,7 +36,7 @@
       link: "/discovery",
       link_text: "Get Started",
       new_page: false,
-      svg_content: `<path d=\"M2 12L12 2L22 12L12 22L2 12Z\" stroke=\"currentColor\" stroke-width=\"1.5\"/>`
+      svg_content: `<path d="M2 12L12 2L22 12L12 22L2 12Z" stroke="currentColor" stroke-width="1.5"/>`
     },
     {
       name: "Secure User Auth",
@@ -45,7 +45,7 @@
       link: "/sign-in",
       link_text: "Try Auth",
       new_page: false,
-      svg_content: `<path d=\"M12 2C15.866 2 19 5.13401 19 9C19 14 12 22 12 22C12 22 5 14 5 9C5 5.13401 8.13401 2 12 2Z\" stroke=\"currentColor\" stroke-width=\"1.5\"/>`
+      svg_content: `<path d="M12 2C15.866 2 19 5.13401 19 9C19 14 12 22 12 22C12 22 5 14 5 9C5 5.13401 8.13401 2 12 2Z" stroke="currentColor" stroke-width="1.5"/>`
     }
   ];
 </script>
@@ -55,6 +55,7 @@
   <meta name="description" content={WEBSITE_DESCRIPTION || "Tentrait bridges IT and OT environments with intelligent, secure infrastructure. Built on the Cloudflare stack with real-time packet analysis and segmentation."} />
 </svelte:head>
 
+<!-- NAVIGATION -->
 <nav class="w-full px-6 py-4 flex justify-between items-center bg-base-100 shadow-sm sticky top-0 z-50">
   <div class="text-xl font-bold text-primary">Tentrait Ltd</div>
   <div class="flex gap-6 text-sm">
@@ -65,6 +66,7 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero min-h-[60vh]">
   <div class="hero-content text-center py-12">
     <div class="max-w-xl">
@@ -96,6 +98,7 @@
   </div>
 </div>
 
+<!-- ABOUT -->
 <div class="min-h-[60vh] px-6 py-12">
   <div class="text-center max-w-4xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold mb-6">About Tentrait Ltd</h2>
@@ -105,6 +108,7 @@
   </div>
 </div>
 
+<!-- USE CASES -->
 <div class="bg-base-200 px-6 py-20">
   <div class="text-center max-w-6xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold mb-10">Use Cases</h2>
@@ -131,6 +135,26 @@
   </div>
 </div>
 
+<!-- FEATURES -->
+<div class="px-6 py-16 bg-base-100">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-10">Platform Features</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {#each features as feature}
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <svg class="w-8 h-8 mb-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" innerHTML={feature.svg_content}></svg>
+          <h3 class="text-xl font-bold mb-2">{feature.name}</h3>
+          <p class="text-base-content/80">{feature.description}</p>
+          <a class="link mt-2 inline-block" href={feature.link} target={feature.new_page ? "_blank" : "_self"}>
+            {feature.link_text}
+          </a>
+        </div>
+      {/each}
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
 <div class="bg-base-100 px-6 py-16">
   <div class="max-w-3xl mx-auto text-center">
     <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4" width="50" height="50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -143,6 +167,7 @@
   </div>
 </div>
 
+<!-- CTA -->
 <div class="bg-gradient-to-r from-warning to-accent text-white py-16">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">Start Your Discovery Journey Today</h2>
@@ -156,6 +181,7 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="mt-20 text-center text-sm text-base-content/50">
   © {new Date().getFullYear()} Tentrait Ltd. All rights reserved.
 </footer>

@@ -1,14 +1,30 @@
-export const POST = async ({ request }) => {
+// src/routes/upload/+server.ts
+import type { RequestHandler } from './$types';
+
+export const POST: RequestHandler = async ({ request, platform }) => {
 	const formData = await request.formData();
 	const file = formData.get('file') as File;
 
 	if (!file || !file.name.endsWith('.pcap')) {
-		return new Response('Invalid file type', { status: 400 });
+		return new Response('Only .pcap files are allowed.', { status: 400 });
 	}
 
-	const buffer = await file.arrayBuffer();
-	console.log(`Received ${file.name} (${buffer.byteLength} bytes)`);
+	// Read the file as binary
+	const arrayBuffer = await file.arrayBuffer();
+	const filename = `${Date.now()}-${file.name}`;
 
-	// TODO: Save to R2 or send to analysis tool
-	return new Response('Upload received', { status: 200 });
+	// Put file into Cloudflare R2 bucket
+	try {
+		const r2 = platform?.env?.TENTRAIT_UPLOADS;
+		if (!r2) {
+			return new Response('R2 binding missing', { status: 500 });
+		}
+
+		await r2.put(filename, arrayBuffer);
+
+		return new Response(`Uploaded ${filename} to R2`, { status: 200 });
+	} catch (err) {
+		console.error('Upload error:', err);
+		return new Response('Upload failed', { status: 500 });
+	}
 };

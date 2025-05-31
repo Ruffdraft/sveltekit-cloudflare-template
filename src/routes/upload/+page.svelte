@@ -1,3 +1,4 @@
+
 <script lang="ts">
   import { Turnstile } from "svelte-turnstile";
   const PUBLIC_TURNSTILE_SITEKEY = import.meta.env.PUBLIC_TURNSTILE_SITEKEY;
@@ -42,13 +43,13 @@
   }
 </script>
 
-<main class="max-w-2xl mx-auto p-6">
-  <h1 class="text-3xl font-bold mb-2 text-gray-800">Upload a PCAP File for Analysis</h1>
-  <p class="text-gray-600 mb-6">Upload a <strong>.pcap</strong> or <strong>.pcapng</strong> file for traffic analysis.</p>
+<main class="max-w-3xl mx-auto py-16 px-6 text-gray-800">
+  <h1 class="text-4xl font-extrabold mb-4 text-primary">Upload a PCAP File for Analysis</h1>
+  <p class="text-lg text-gray-600 mb-8">Upload a <strong>.pcap</strong> or <strong>.pcapng</strong> file for advanced traffic diagnostics.</p>
 
-  <form on:submit={handleUpload} enctype="multipart/form-data" class="space-y-6 bg-white shadow-md p-6 rounded-lg border border-gray-200">
+  <form on:submit={handleUpload} enctype="multipart/form-data" class="space-y-6 bg-white shadow-lg p-8 rounded-xl border border-gray-200">
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1" for="file">Choose PCAP File:</label>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="file">Choose PCAP File:</label>
       <input type="file" name="file" accept=".pcap,.pcapng" required
         on:change={(e) => {
           const file = e.target.files?.[0];
@@ -60,23 +61,43 @@
             selectedFile = file;
           }
         }}
-        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-md bg-gray-50" />
+        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" />
       {#if selectedFile}
         <p class="mt-1 text-sm text-gray-500">Selected: {selectedFile.name}</p>
       {/if}
     </div>
 
-    <Turnstile sitekey={PUBLIC_TURNSTILE_SITEKEY} on:success={(e) => token = e.detail.token} />
+    <div class="pt-2">
+      <Turnstile sitekey={PUBLIC_TURNSTILE_SITEKEY} on:success={(e) => token = e.detail.token} />
+    </div>
 
-    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded w-full sm:w-auto"
+    <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-6 rounded-lg shadow-sm transition disabled:opacity-50"
       disabled={uploading}>
       {uploading ? 'Uploading…' : 'Upload File'}
     </button>
 
     {#if message}
-      <div class={`mt-4 px-4 py-3 rounded text-sm font-medium ${messageType === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+      <div class={`mt-4 px-4 py-3 rounded-lg text-sm font-medium ${messageType === 'success' ? 'bg-green-50 text-green-800 border border-green-300' : 'bg-red-50 text-red-800 border border-red-300'}`}>
         {message}
       </div>
     {/if}
   </form>
 </main>
+
+<style>
+  :global(.text-primary) {
+    color: #004578;
+  }
+  :global(.bg-primary) {
+    background-color: #004578;
+  }
+  :global(.hover\:bg-primary-dark:hover) {
+    background-color: #00335a;
+  }
+  :global(.focus\:ring-primary) {
+    --tw-ring-color: #004578;
+  }
+  :global(.focus\:border-primary) {
+    border-color: #004578;
+  }
+</style>

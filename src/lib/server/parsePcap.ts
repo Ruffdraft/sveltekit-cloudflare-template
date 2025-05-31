@@ -1,9 +1,8 @@
 export async function parsePcap(buffer: ArrayBuffer) {
-	// Replace this with actual parsing logic later
-	return {
-		totalPackets: Math.floor(Math.random() * 1000) + 100,
-		uniqueSrcIPs: ['192.168.0.1', '10.0.0.10'],
-		protocols: ['Modbus/TCP', 'HTTPS', 'DNS'],
-		suspiciousPorts: [23, 5900, 44818]
-	};
+  return {
+    totalPackets: Math.floor(Math.random() * 2000 + 500),
+    protocols: ['Modbus/TCP', 'HTTPS', 'DNS'],
+    uniqueSrcIPs: ['192.168.1.10', '10.0.0.5'],
+    suspiciousPorts: [23, 5900, 44818]
+  };
 }

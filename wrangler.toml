@@ -5,17 +5,12 @@ compatibility_flags = ["nodejs_compat"]
 main = "src/entry-server.ts"
 build.command = "npm run build"
 
-[site]
-bucket = "./.svelte-kit/cloudflare"
-entry-point = "."
 
 [vars]
 TURNSTILE_SECRET = "0x4AAAAAAABEtTUEm56iJ_QCRiG-YOU-Y2cg"
 PUBLIC_TURNSTILE_SITEKEY = "0x4AAAAAAABEtTUAEgrIvONTeq"
 
-[[r2_buckets]]
 binding = "TENTRAIT_UPLOADS"
-bucket_name = "tentrait-pcap"
 
 [[kv_namespaces]]
 binding = "TENTRAIT_KV"
@@ -27,7 +22,6 @@ queue = "analysis-queue"
 
 [[queues.consumers]]
 queue = "analysis-queue"
-worker = "analysis-worker"
 
 [env.production]
 name = "tentrait-app"

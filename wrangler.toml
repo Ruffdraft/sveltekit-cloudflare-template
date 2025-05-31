@@ -32,3 +32,4 @@ consumer_script = "analysis-worker"
 [env.production]
 name = "tentrait-app"
 route = "https://tentrait.com/*"
+pages_build_output_dir = "./.svelte-kit/cloudflare"

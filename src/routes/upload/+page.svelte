@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Turnstile } from "svelte-turnstile";
-  import { PUBLIC_TURNSTILE_SITEKEY } from "$env/static/public";
+  const PUBLIC_TURNSTILE_SITEKEY = import.meta.env.PUBLIC_TURNSTILE_SITEKEY;
 
   let message: string | null = null;
   let messageType: 'success' | 'error' | null = null;

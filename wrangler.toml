@@ -27,7 +27,7 @@ queue = "analysis-queue"
 
 [[queues.consumers]]
 queue = "analysis-queue"
-consumer_script = "analysis-worker"
+worker = "analysis-worker"
 
 [env.production]
 name = "tentrait-app"

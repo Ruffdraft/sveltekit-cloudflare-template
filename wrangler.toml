@@ -10,8 +10,8 @@ bucket = "./.svelte-kit/cloudflare"
 entry-point = "."
 
 [vars]
-TURNSTILE_SECRET = "your_turnstile_secret"
-PUBLIC_TURNSTILE_SITEKEY = "your_turnstile_site_key"
+TURNSTILE_SECRET = "0x4AAAAAABfTUEon56iJ_QCRiG-Y0U-Y2cg"
+PUBLIC_TURNSTILE_SITEKEY = "0x4AAAAAABfTUAEgrIv0MTeq"
 
 [[r2_buckets]]
 binding = "TENTRAIT_UPLOADS"

@@ -1,0 +1,35 @@
+name = "tentrait-app"
+compatibility_date = "2024-05-30"
+compatibility_flags = ["nodejs_compat"]
+
+main = "src/entry-server.ts"
+build.command = "npm run build"
+
+[site]
+bucket = "./.svelte-kit/cloudflare"
+entry-point = "."
+
+[vars]
+TURNSTILE_SECRET = "0x4AAAAAABfTUEon56iJ_QCRiG-Y0U-Y2cg"
+PUBLIC_TURNSTILE_SITEKEY = "0x4AAAAAABfTUAEgrIv0MTeq"
+
+[[r2_buckets]]
+binding = "TENTRAIT_UPLOADS"
+bucket_name = "tentrait-pcap"
+
+[[kv_namespaces]]
+binding = "TENTRAIT_KV"
+id = "your_kv_namespace_id"
+preview_id = "your_preview_kv_namespace_id" # optional for dev
+
+[[queues.producers]]
+binding = "TENTRAIT_ANALYSIS_QUEUE"
+queue = "analysis-queue"
+
+[[queues.consumers]]
+queue = "analysis-queue"
+consumer_script = "analysis-worker"
+
+[env.production]
+name = "tentrait-app"
+route = "https://tentrait.com/*"

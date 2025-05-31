@@ -7,11 +7,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sveltejs/kit": "next",
-    "svelte": "^3.59.2"
+    "svelte": "^4.2.18",
+    "@sveltejs/kit": "^2.5.18"
   },
   "devDependencies": {
-    "@sveltejs/adapter-cloudflare": "next",
+    "@sveltejs/adapter-cloudflare": "^2.5.18",
     "vite": "^5.0.0"
   }
 }

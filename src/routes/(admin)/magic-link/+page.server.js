@@ -107,7 +107,7 @@ export async function load({ cookies, request, platform }) {
 
   // check if the email is verified
   if (!user_info.is_email_verified) {
-    // the email is not verified. it should not happen in practice, but just in case
+    // the email is not verified. it should not happen in practice, but we handle it anyway
     await log_message(platform, app_env, place, "error", "the email is not verified, but the magic link is valid, should not happen.");
     await record_failure_attempt(platform, place, ip_address, user_info.email);
     error(

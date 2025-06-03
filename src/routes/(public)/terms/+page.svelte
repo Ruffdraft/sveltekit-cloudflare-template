@@ -10,10 +10,10 @@
     <p class="text-center text-error">(For example purpose only)</p>
 
     <h4 class="font-bold mt-8 mb-4">AGREEMENT TO OUR LEGAL TERMS</h4>
-    <p class="text-base">We are {WEBSITE_NAME} Pte Ltd ("Company," "we," "us," "our"), a company registered in Singapore.</p>
+    <p class="text-base">We are {WEBSITE_NAME} ("Company," "we," "us," "our"), a company registered in Singapore.</p>
     <p class="text-base">We operate the website http://{APP_DOMAIN} (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").</p>
     <p class="text-base">You can contact us by email at support@{APP_DOMAIN}.</p>
-    <p class="text-base">These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and {WEBSITE_NAME} Pte Ltd, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
+    <p class="text-base">These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and {WEBSITE_NAME}, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
     <p class="text-base">Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms from time to time. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.</p>
     <p class="text-base">All users who are minors in the jurisdiction in which they reside (generally under the age of 18) must have the permission of, and be directly supervised by, their parent or guardian to use the Services. If you are a minor, you must have your parent or guardian read and agree to these Legal Terms prior to you using the Services.</p>
 
@@ -75,10 +75,10 @@
     <p class="text-base">We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Services, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Services at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Services during any downtime or discontinuance of the Services. Nothing in these Legal Terms will be construed to obligate us to maintain and support the Services or to supply any corrections, updates, or releases in connection therewith.</p>
 
     <h4 class="font-bold mt-8 mb-4">12. GOVERNING LAW</h4>
-    <p class="text-base">These Legal Terms shall be governed by and defined following the laws of Singapore. {WEBSITE_NAME} Pte Ltd and yourself irrevocably consent that the courts of Singapore shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these Legal Terms.</p>
+    <p class="text-base">These Legal Terms shall be governed by and defined following the laws of Singapore. {WEBSITE_NAME} and yourself irrevocably consent that the courts of Singapore shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these Legal Terms.</p>
 
     <h4 class="font-bold mt-8 mb-4">13. DISPUTE RESOLUTION</h4>
-    <p class="text-base">You agree to irrevocably submit all disputes related to these Legal Terms or the legal relationship established by these Legal Terms to the jurisdiction of the Singapore courts. {WEBSITE_NAME} Pte Ltd shall also maintain the right to bring proceedings as to the substance of the matter in the courts of the country where you reside or, if these Legal Terms are entered into in the course of your trade or profession, the state of your principal place of business.</p>
+    <p class="text-base">You agree to irrevocably submit all disputes related to these Legal Terms or the legal relationship established by these Legal Terms to the jurisdiction of the Singapore courts. {WEBSITE_NAME} shall also maintain the right to bring proceedings as to the substance of the matter in the courts of the country where you reside or, if these Legal Terms are entered into in the course of your trade or profession, the state of your principal place of business.</p>
 
     <h4 class="font-bold mt-8 mb-4">14. CORRECTIONS</h4>
     <p class="text-base">There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
@@ -103,7 +103,7 @@
 
     <h4 class="font-bold mt-8 mb-4">21. CONTACT US</h4>
     <p class="text-base">In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
-    <p class="text-base font-semibold">{WEBSITE_NAME} Pte Ltd</p>
+    <p class="text-base font-semibold">{WEBSITE_NAME}</p>
     <p class="text-base font-semibold">Singapore</p>
     <p class="text-base font-semibold">support@{APP_DOMAIN}</p>
   </article>

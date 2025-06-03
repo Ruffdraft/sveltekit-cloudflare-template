@@ -15,7 +15,7 @@ function get_turnstile_sitekey() {
 }
 
 export const TURNSTILE_SITEKEY = get_turnstile_sitekey();
-export const WEBSITE_NAME = "Just In Case"; // change this to your own website name
+export const WEBSITE_NAME = "Tentrait ltd"; // change this to your own website name
 export const APP_DOMAIN = "justincase.top"; // change this to your own domain
 export const WEBSITE_DESCRIPTION =
   "The fast, serverless, open source, and full-stack website. Built with SvelteKit, Tailwind, DaisyUI, Stripe and Cloudflare Pages.";

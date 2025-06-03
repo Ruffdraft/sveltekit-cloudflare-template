@@ -6,6 +6,7 @@
   import { writable } from "svelte/store";
   import { setContext } from "svelte";
   import { sessions_and_activities } from "$store";
+  import ThemeToggle from "$lib/ThemeToggle.svelte";
 
   export let data;
   const { user } = data;
@@ -294,76 +295,10 @@
         </button>
         <ul
           class="dropdown-content bg-base-100 z-[100] menu p-2 border shadow rounded-box w-52"
-        > 
-          <!--  haven't implemented the toggle theme functionality yet
+        >
           <li>
-            <a href="/dashboard" target="_blank" class="text-base">
-              <svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                stroke="none"
-                fill="none"
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="5"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path
-                  d="M12 2V4"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M12 20V22"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M4 12L2 12"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M22 12L20 12"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M19.7778 4.22266L17.5558 6.25424"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M4.22217 4.22266L6.44418 6.25424"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M6.44434 17.5557L4.22211 19.7779"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M19.7778 19.7773L17.5558 17.5551"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              Toggle theme
-            </a>
+            <ThemeToggle />
           </li>
-          -->
           <li>
             <!-- TODO: /doc -->
             <a href="/dashboard" class="text-base">

@@ -1,6 +1,7 @@
 <script>
   import "$appcss";
   import { WEBSITE_NAME } from "$config";
+  import ThemeToggle from "$lib/ThemeToggle.svelte";
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">
@@ -30,11 +31,12 @@
         >
       </li>
       <li class="sm:mx-1">
-        <a href="/sign-up" class="btn btn-primary text-base font-bold"
-          >Sign Up</a
-        >
+        <a href="/sign-up" class="btn btn-primary text-base font-bold">Sign Up</a>
       </li>
-    </ul>
+      <li class="sm:mx-1">
+        <ThemeToggle />
+      </li>
+      </ul>
     <div class="dropdown dropdown-end sm:hidden">
       <!-- svelte-ignore a11y-label-has-associated-control -->
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -79,9 +81,10 @@
           >
         </li>
         <li>
-          <a href="/sign-up" class="btn btn-primary text-base font-bold"
-            >Sign Up</a
-          >
+          <a href="/sign-up" class="btn btn-primary text-base font-bold">Sign Up</a>
+        </li>
+        <li>
+          <ThemeToggle />
         </li>
       </ul>
     </div>

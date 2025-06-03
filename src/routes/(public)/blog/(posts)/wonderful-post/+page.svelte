@@ -21,6 +21,6 @@ npm install
 <p>
   Check out more formatting options like lists, headers, and more in <a
     href="https://play.tailwindcss.com/uj1vGACRJA?layout=preview"
-    >the tailwind/typograpy docs</a
+    >the tailwind/typography docs</a
   >.
 </p>

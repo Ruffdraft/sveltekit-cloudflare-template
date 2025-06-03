@@ -18,7 +18,7 @@ export const TURNSTILE_SITEKEY = get_turnstile_sitekey();
 export const WEBSITE_NAME = "Tentrait ltd"; // change this to your own website name
 export const APP_DOMAIN = "justincase.top"; // change this to your own domain
 export const WEBSITE_DESCRIPTION =
-  "The fast, serverless, open source, and full-stack website. Built with SvelteKit, Tailwind, DaisyUI, Stripe and Cloudflare Pages.";
+  "Tentrait delivers secure, scalable infrastructure for businesses operating across complex digital and operational landscapes.";
 
 export const LOGIN_TOKEN_TTL = 1 * 24 * (60 * 60); // the login token (cookie) will last for 1 day, in seconds
 export const MAGIC_LINK_TOKEN_TTL = 1 * 1 * (30 * 60); // the magic login link will last for 30 mins, in seconds

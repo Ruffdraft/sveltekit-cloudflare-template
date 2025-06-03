@@ -15,6 +15,9 @@
         <a href="/blog" class="btn btn-ghost text-base font-bold">Blog</a>
       </li>
       <li class="sm:mx-1">
+        <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
+      </li>
+      <li class="sm:mx-1">
         <a href="/upload" class="btn btn-ghost text-base font-bold">Packet Upload</a>
       </li>
       <li class="sm:mx-1">
@@ -59,6 +62,9 @@
           <a href="/blog" class="btn btn-ghost text-base font-bold">Blog</a>
         </li>
         <li>
+          <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
+        </li>
+        <li>
           <a href="/upload" class="btn btn-ghost text-base font-bold">Packet Upload</a>
         </li>
         <li>
@@ -96,6 +102,7 @@
       <span class="footer-title opacity-80">Explore</span>
       <a class="link link-hover my-1" href="/pricing">Pricing</a>
       <a class="link link-hover my-1" href="/blog">Blog</a>
+      <a class="link link-hover my-1" href="/about">About</a>
       <a class="link link-hover my-1" href="/upload">Packet Upload</a>
       <a class="link link-hover my-1" href="/contact-us">Contact Us</a>
       <a

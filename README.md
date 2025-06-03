@@ -1,6 +1,6 @@
 <p align="center">
     <picture>
-        <img width="500" alt="Homepage" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/homepage.jpg">
+        <img width="500" alt="Tentrait homepage" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/homepage.jpg">
     </picture>
 </p>
 
@@ -47,15 +47,15 @@ You are highly recommended to explore all the features using the fully functiona
 
 <a href="https://tentrait.com">
 <kbd>
-<img width="600" alt="sign in page" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/sign_in_page.jpg">
+<img width="600" alt="Sign-in page" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/sign_in_page.jpg">
 </kbd>
 <br>
 <kbd>
-<img width="600" alt="sessions page" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/sessions_page.jpg">
+<img width="600" alt="Sessions page" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/sessions_page.jpg">
 </kbd>
 <br>
 <kbd>
-<img width="600" alt="checkout portal" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/checkout_portal.jpg">
+<img width="600" alt="Stripe portal" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/checkout_portal.jpg">
 </kbd>
 </a>
 

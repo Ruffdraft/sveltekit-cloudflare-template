@@ -144,8 +144,15 @@ export const actions = {
         }),
       });
 
-      if (res_send_verify_email.error) {
+      if (!res_send_verify_email.ok) {
         // failed to send verification email
+        log_message(
+          platform,
+          app_env,
+          place,
+          "error",
+          "failed to send verification email, status: " + res_send_verify_email.status
+        );
         return fail(500, {
           error: true,
           error_message: "Internal server error. Please try again later.",

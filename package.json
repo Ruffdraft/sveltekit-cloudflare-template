@@ -8,10 +8,23 @@
   },
   "dependencies": {
     "svelte": "4.2.18",
-    "@sveltejs/kit": "2.5.10"
+    "@sveltejs/kit": "2.5.10",
+    "stripe": "18.2.1",
+    "@tsndr/cloudflare-worker-jwt": "3.2.0",
+    "i18n-iso-countries": "7.14.0",
+    "uuid": "11.1.0",
+    "bcryptjs": "3.0.2",
+    "svelte-turnstile": "0.11.0",
+    "svelte-french-toast": "1.2.0",
+    "ua-parser-js": "2.0.3"
   },
   "devDependencies": {
-    "@sveltejs/adapter-cloudflare": "2.0.3",
-    "vite": "5.0.12"
+    "@sveltejs/adapter-cloudflare": "7.0.3",
+    "vite": "5.0.12",
+    "tailwindcss": "4.1.8",
+    "daisyui": "5.0.43",
+    "@tailwindcss/typography": "0.5.16",
+    "autoprefixer": "10.4.21",
+    "@tailwindcss/postcss": "4.1.8"
   }
 }

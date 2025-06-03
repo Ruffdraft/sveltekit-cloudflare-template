@@ -1,18 +1,20 @@
 <p align="center">
     <picture>
-        <img width="500" alt="Just In Case Homepage" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/homepage.jpg">
+        <img width="500" alt="Homepage" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/homepage.jpg">
     </picture>
 </p>
 
 <p align="center">
-  <a href="https://justincase.top"><strong>Demo & Homepage</strong></a> •
+  <a href="https://tentrait.com"><strong>Demo & Homepage</strong></a> •
   <a href="https://github.com/zcsd/sveltekit-cloudflare-template#quick-start"><strong>Quick Start Guide</strong></a> • 
   <a href="https://github.com/zcsd/sveltekit-cloudflare-template/issues"><strong>Issues</strong></a>
 </p>
 
 <br/>
 
-# Just In Case: A SvelteKit & Cloudflare Template
+# SvelteKit & Cloudflare Template
+
+This open-source template is maintained by [Tentrait Ltd](https://tentrait.com).
 
 If you are looking for a SvelteKit template that perfectly integrates Cloudflare Pages & KV & D1 database & Workers & Queues & R2 storage & Turnstile CAPTCHA (**One Platform for Everything**), then you are in the right place. You can build a fully functional website with authentication, subscriptions, profile, blog, contact-us and more using this template. It's designed for SaaS, membership, or subscription-based services.
 
@@ -39,11 +41,11 @@ If you are looking for a SvelteKit template that perfectly integrates Cloudflare
 
 ## Demo
 
-You are highly recommended to explore all the features using the fully functional demo [justincase.top](https://justincase.top).
+You are highly recommended to explore all the features using the fully functional demo [tentrait.com](https://tentrait.com).
 
-[![Try it Now](https://img.shields.io/badge/Try_it_Now-37a779?style=for-the-badge "Try it Now")](https://justincase.top)
+[![Try it Now](https://img.shields.io/badge/Try_it_Now-37a779?style=for-the-badge "Try it Now")](https://tentrait.com)
 
-<a href="https://justincase.top">
+<a href="https://tentrait.com">
 <kbd>
 <img width="600" alt="sign in page" src="https://images.linzichun.com/blog/sveltekit_cloudflare_template/sign_in_page.jpg">
 </kbd>
@@ -165,7 +167,7 @@ To deploy the website live, follow the below steps to do the necessary setup.
 
 ### Setup Cloudflare
 
-- Create a [Cloudflare](https://www.cloudflare.com/) account and add (or buy) a domain(eg, `justincase.top`) in Cloudflare. Free plan is ok, but Worker Paid plan ($5/month) is required for error logging feature (optional, can be disabled).
+ - Create a [Cloudflare](https://www.cloudflare.com/) account and add (or buy) a domain (eg, `tentrait.com`) in Cloudflare. Free plan is ok, but Worker Paid plan ($5/month) is required for error logging feature (optional, can be disabled).
 
 - Create two new Cloudflare KV namespace named `login_session_cache` and `rate_limit` via Cloudflare dashboard or wrangler CLI. 
 
@@ -179,14 +181,14 @@ To deploy the website live, follow the below steps to do the necessary setup.
   - Create a Cloudflare Worker (consumer worker) to consume the error logs from the queue. You can use the Worker project in the `/workers/error_logger` directory. Just execute the command `npx wrangler deploy` in the `/workers/error_logger` directory to deploy the worker. All the necessary bindings are done in the `/workers/error_logger/wrangler.toml` file, no need to bind them in the Cloudflare dashboard again.
 
 - Setup Turnstile CAPTCHA
-  - Add the website (eg, `justincase.top`) to Turnstile in the Cloudflare dashboard. You can use the default settings, or customize it as you like. 
+ - Add the website (eg, `tentrait.com`) to Turnstile in the Cloudflare dashboard. You can use the default settings, or customize it as you like.
   - Get the site key and secret key, change the site key (ok to public) in `get_turnstile_sitekey()` function of `/src/config.js` file, and add the secret key (keep it secure) as an environment variable `TURNSTILE_SECRET_KEY` in Cloudflare dashboard for production.
 
 ### Setup Resend Email API
 
 - Create a [Resend](https://resend.com/) account, free plan is good.
 
-- Add your domain (eg, `justincase.top`) in the Resend dashboard and set the required DNS records in the Cloudflare dashboard. Here I use the subdomain `mail.justincase.top` for email sending.
+ - Add your domain (eg, `tentrait.com`) in the Resend dashboard and set the required DNS records in the Cloudflare dashboard. Here I use the subdomain `mail.tentrait.com` for email sending.
 
 - Create an API key in the Resend dashboard, and add it as an environment variable `RESEND_API_KEY` in (`.dev.vars` file locally, and Cloudflare dashboard for production).
 
@@ -206,7 +208,7 @@ The Lark bot webhook is for error log notification feature. This is optional, yo
 
 - Create a product and price Tiers
   - Create your [products](https://stripe.com/docs/api/products) and their [prices](https://stripe.com/docs/api/prices) in the dashboard or with the Stripe CLI.
-  - This template works best if you define each tier as a separate product (eg, `Just In Case Free`, `Just In Case Pro`, `Just In Case Enterprise`). Include a monthly and annual price for each product if you want to support multiple billing periods.
+  - This template works best if you define each tier as a separate product (eg, `Free`, `Pro`, `Enterprise`). Include a monthly and annual price for each product if you want to support multiple billing periods.
   - You do not need to create a free plan in Stripe. The free plan is managed within the app.
   - Add pricing descriptions in dashboard for different prices to help you identify the product in the code better (eg,`Pro Monthly Subscription`, `Pro Yearly Subscription`, `Enterprise Monthly Subscription`, `Enterprise Yearly Subscription`). You can do it in this way: `Product catalog > Edit product (you want to add description for) > (find pricing option) Edit price > Advanced > Price description`.
 
@@ -214,7 +216,7 @@ The Lark bot webhook is for error log notification feature. This is optional, yo
   - Get your [Secret API](https://dashboard.stripe.com/test/apikeys) key, and add it as an environment variable `PRIVATE_STRIPE_API_KEY` in (`.dev.vars` file locally, and Cloudflare dashboard for production). Be sure to use test keys for development, and keep your production keys secret and secure.
 
 - Setup your Stripe Webhook
-  - Add your [Stripe webhook endpoint](https://dashboard.stripe.com/test/webhooks). Here I use `https://justincase.top/api/stripe-webhooks` for the webhook endpoint as an example. You can use your own domain and path. Select the events you want to listen to, here I use `invoice.paid` event to trigger the webhook, so the subscription status in database will be updated immediately after the renewal payment is successful, check the related code in `/src/routes/(admin)/api/stripe-webhooks/+server.js` file.
+ - Add your [Stripe webhook endpoint](https://dashboard.stripe.com/test/webhooks). Here I use `https://tentrait.com/api/stripe-webhooks` for the webhook endpoint as an example. You can use your own domain and path. Select the events you want to listen to, here I use `invoice.paid` event to trigger the webhook, so the subscription status in database will be updated immediately after the renewal payment is successful, check the related code in `/src/routes/(admin)/api/stripe-webhooks/+server.js` file.
   - Once the endpoint is created, you can reveal the signing secret in the webhook page. Add the webhook signing secret as an environment variable `STRIPE_WH_SECRET` in Cloudflare dashboard for production.
 - Optional: theme your Stripe integration
   - [Customize your brand](https://dashboard.stripe.com/settings/branding) for Stripe Checkout and Portal pages. You can change the logo, colors, and more.

@@ -1,6 +1,6 @@
 // Cloudflare D1 Database operations
 // check the db schema in /db_schema/schema.sql
-import parser from "ua-parser-js";
+import { UAParser } from "ua-parser-js";
 
 export async function db_get_user_info_by_email(platform, email) {
   const query =
@@ -393,7 +393,7 @@ export async function db_get_activity_records_and_login_sessions(platform, uuid)
 export async function db_insert_activity_record(platform, headers, action_name, uuid) {
   const ip_address = headers.get("cf-connecting-ip") || "undefined-ip";
   const ip_country = headers.get("cf-ipcountry") || "undefined-ipcountry";
-  const ua_paser = parser(headers.get("user-agent"));
+  const ua_paser = new UAParser(headers.get("user-agent")).getResult();
   const ua_device = ua_paser.device.vendor + "-" + ua_paser.device.model;
   const ua_os = ua_paser.os.name + "-" + ua_paser.os.version;
   const ua_browser = ua_paser.browser.name + "-" + ua_paser.browser.version;
@@ -441,7 +441,7 @@ export async function db_insert_login_record_session(platform, headers, info, se
   // info = {uuid, nickname, email, organization, stripe_customer_id, current_product_id, current_period_end_at, had_subscription_before, created_at, expire_at}
   const ip_address = headers.get("cf-connecting-ip") || "undefined-ip";
   const ip_country = headers.get("cf-ipcountry") || "undefined-ipcountry";
-  const ua_paser = parser(headers.get("user-agent"));
+  const ua_paser = new UAParser(headers.get("user-agent")).getResult();
   const ua_device = ua_paser.device.vendor + "-" + ua_paser.device.model;
   const ua_os = ua_paser.os.name + "-" + ua_paser.os.version;
   const ua_browser = ua_paser.browser.name + "-" + ua_paser.browser.version;
@@ -629,7 +629,7 @@ export async function db_delete_login_session(platform, session_id) {
 export async function db_register_new_user(platform, headers, register_info) {
   const ip_address = headers.get("cf-connecting-ip") || "undefined-ip";
   const ip_country = headers.get("cf-ipcountry") || "undefined-ipcountry";
-  const ua_paser = parser(headers.get("user-agent"));
+  const ua_paser = new UAParser(headers.get("user-agent")).getResult();
   const ua_device = ua_paser.device.vendor + "-" + ua_paser.device.model;
   const ua_os = ua_paser.os.name + "-" + ua_paser.os.version;
   const ua_browser = ua_paser.browser.name + "-" + ua_paser.browser.version;
@@ -853,7 +853,7 @@ export async function db_delete_pwd_reset_info(platform, email) {
 export async function db_update_password(platform, headers, uuid, password_hash) {
   const ip_address = headers.get("cf-connecting-ip") || "undefined-ip";
   const ip_country = headers.get("cf-ipcountry") || "undefined-ipcountry";
-  const ua_paser = parser(headers.get("user-agent"));
+  const ua_paser = new UAParser(headers.get("user-agent")).getResult();
   const ua_device = ua_paser.device.vendor + "-" + ua_paser.device.model;
   const ua_os = ua_paser.os.name + "-" + ua_paser.os.version;
   const ua_browser = ua_paser.browser.name + "-" + ua_paser.browser.version;

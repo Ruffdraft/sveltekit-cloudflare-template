@@ -142,35 +142,15 @@
       <div
         class="text-3xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-warning to-accent mb-4 md:mb-8"
       >
-        Cheers! (◕‿◕)
+        Infrastructure. Insight. Integrity.
       </div>
 
       <div
         class="text-4xl md:text-6xl font-bold px-2"
         style="line-height: 1.2;"
       >
-        The
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-        >
-          fast</span
-        >,
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-        >
-          serverless</span
-        >,
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-        >
-          open source</span
-        >, and
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-        >
-          full-stack</span
-        >
-        <span> website</span>
+        {WEBSITE_NAME}: secure, scalable infrastructure for complex digital and
+        operational landscapes
       </div>
 
       <div class="mt-6 md:mt-10 text-sm md:text-lg">

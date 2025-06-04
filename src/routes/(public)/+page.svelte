@@ -142,44 +142,19 @@
       <div
         class="text-3xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-warning to-accent mb-4 md:mb-8"
       >
-        Infrastructure. Insight. Integrity.
+        Secure. Scalable. Seamless.
       </div>
 
       <div
         class="text-4xl md:text-6xl font-bold px-2"
         style="line-height: 1.2;"
       >
-        {WEBSITE_NAME}: secure, scalable infrastructure for complex digital and
-        operational landscapes
+          Bridging IT and OT with Intelligence.
       </div>
 
-      <div class="mt-6 md:mt-10 text-sm md:text-lg">
-        Built with
-        <a href="https://kit.svelte.dev" class="link font-bold" target="_blank">
-          SvelteKit</a
-        >,
-        <a
-          href="https://tailwindcss.com"
-          class="link font-bold"
-          target="_blank"
-        >
-          Tailwind</a
-        >,
-        <a href="https://daisyui.com" class="link font-bold" target="_blank">
-          DaisyUI</a
-        >,
-        <a href="https://stripe.com" class="link font-bold" target="_blank">
-          Stripe</a
-        >
-        and
-        <a
-          href="https://developers.cloudflare.com/pages"
-          class="link font-bold"
-          target="_blank"
-        >
-          Cloudflare Pages</a
-        >.
-      </div>
+        <div class="mt-6 md:mt-10 text-sm md:text-lg">
+          Tentrait Ltd develops intelligent tools that simplify complex infrastructure challenges — from OT-aware packet analysis to secure access segmentation and scalable SaaS platforms. Built on modern cloud architecture, our solutions empower organisations to visualise, secure, and optimise their operations without disruption.
+        </div>
 
       <div class="mt-6 md:mt-2">
         <a href="https://github.com/zcsd/sveltekit-cloudflare-template" target="_blank">

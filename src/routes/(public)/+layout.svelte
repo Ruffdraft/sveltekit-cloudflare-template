@@ -19,6 +19,9 @@
         <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
       </li>
       <li class="sm:mx-1">
+        <a href="/benefits" class="btn btn-ghost text-base font-bold">Benefits</a>
+      </li>
+      <li class="sm:mx-1">
         <a href="/upload" class="btn btn-ghost text-base font-bold">Packet Upload</a>
       </li>
       <li class="sm:mx-1">
@@ -67,6 +70,9 @@
           <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
         </li>
         <li>
+          <a href="/benefits" class="btn btn-ghost text-base font-bold">Benefits</a>
+        </li>
+        <li>
           <a href="/upload" class="btn btn-ghost text-base font-bold">Packet Upload</a>
         </li>
         <li>
@@ -104,9 +110,10 @@
     <nav>
       <span class="footer-title opacity-80">Explore</span>
       <a class="link link-hover my-1" href="/pricing">Pricing</a>
-      <a class="link link-hover my-1" href="/blog">Blog</a>
-      <a class="link link-hover my-1" href="/about">About</a>
-      <a class="link link-hover my-1" href="/upload">Packet Upload</a>
+        <a class="link link-hover my-1" href="/blog">Blog</a>
+        <a class="link link-hover my-1" href="/about">About</a>
+        <a class="link link-hover my-1" href="/benefits">Benefits</a>
+        <a class="link link-hover my-1" href="/upload">Packet Upload</a>
       <a class="link link-hover my-1" href="/contact-us">Contact Us</a>
       <a
         class="link link-hover my-1"

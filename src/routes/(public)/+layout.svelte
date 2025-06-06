@@ -16,6 +16,9 @@
         <a href="/blog" class="btn btn-ghost text-base font-bold">Blog</a>
       </li>
       <li class="sm:mx-1">
+        <a href="/news" class="btn btn-ghost text-base font-bold">News</a>
+      </li>
+      <li class="sm:mx-1">
         <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
       </li>
       <li class="sm:mx-1">
@@ -63,12 +66,15 @@
         tabindex="0"
         class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40 font-bold space-y-1"
       >
-        <li>
-          <a href="/blog" class="btn btn-ghost text-base font-bold">Blog</a>
-        </li>
-        <li>
-          <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
-        </li>
+      <li>
+        <a href="/blog" class="btn btn-ghost text-base font-bold">Blog</a>
+      </li>
+      <li>
+        <a href="/news" class="btn btn-ghost text-base font-bold">News</a>
+      </li>
+      <li>
+        <a href="/about" class="btn btn-ghost text-base font-bold">About</a>
+      </li>
         <li>
           <a href="/benefits" class="btn btn-ghost text-base font-bold">Benefits</a>
         </li>
@@ -111,6 +117,7 @@
       <span class="footer-title opacity-80">Explore</span>
       <a class="link link-hover my-1" href="/pricing">Pricing</a>
         <a class="link link-hover my-1" href="/blog">Blog</a>
+        <a class="link link-hover my-1" href="/news">News</a>
         <a class="link link-hover my-1" href="/about">About</a>
         <a class="link link-hover my-1" href="/benefits">Benefits</a>
         <a class="link link-hover my-1" href="/dashboard/packet-capture">Packet Upload</a>

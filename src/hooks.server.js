@@ -9,6 +9,29 @@ const app_env = dev ? "development" : "production";
 const place = "hooks";
 const protected_routes = ["/dashboard"];
 
+function add_security_headers(response) {
+  const type = response.headers.get("content-type");
+  if (type && type.startsWith("text/html")) {
+    response.headers.set(
+      "Content-Security-Policy",
+      "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'"
+    );
+    response.headers.set("X-Frame-Options", "DENY");
+    response.headers.set("X-Content-Type-Options", "nosniff");
+    response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+    response.headers.set(
+      "Strict-Transport-Security",
+      "max-age=31536000; includeSubDomains"
+    );
+  }
+}
+
+async function resolve_with_security(event, resolve) {
+  const response = await resolve(event);
+  add_security_headers(response);
+  return response;
+}
+
 /*
   login_auth_token is a signed JWT (with payload: uuid), which is stored in cookie and used as session_id (key in KV and db).
   The token OR session_id is used to authenticate user and maintain user session.
@@ -42,7 +65,7 @@ export async function handle({ event, resolve }) {
   if (!is_protected_route && event.url.pathname !== "/sign-in") {
     // not trying to access protected route or login page => ok to proceed, no need to check token and session
     log_message(event.platform, app_env, place, "info", "access unprotected or non sign-in, no need to check, ok to continue.");
-    return await resolve(event);
+    return await resolve_with_security(event, resolve);
   }
 
   if (login_auth_token) {
@@ -60,7 +83,7 @@ export async function handle({ event, resolve }) {
       }
       // invalid token, trying to access unprotected route => ok to continue
       log_message(event.platform, app_env, place, "info", "invalid token, access unprotected page, ok to continue.");
-      return await resolve(event);
+      return await resolve_with_security(event, resolve);
     }
 
     const is_valid_token = await jwt.verify(login_auth_token, event.platform.env.LOGIN_JWT_SECRET);
@@ -77,7 +100,7 @@ export async function handle({ event, resolve }) {
       }
       // invalid token, trying to access unprotected route => ok to continue
       log_message(event.platform, app_env, place, "info", "invalid token, access unprotected page, ok to continue.");
-      return await resolve(event);
+      return await resolve_with_security(event, resolve);
     } else {
       // valid token
       // still need to check if the session_id (login_auth_token) is in KV or db
@@ -112,5 +135,5 @@ export async function handle({ event, resolve }) {
     }
   }
   // otherwise, proceed as usual
-  return await resolve(event);
+  return await resolve_with_security(event, resolve);
 }

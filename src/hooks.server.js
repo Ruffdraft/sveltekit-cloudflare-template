@@ -7,7 +7,7 @@ import { get_login_session } from "$lib/server/session";
 
 const app_env = dev ? "development" : "production";
 const place = "hooks";
-const protected_routes = ["/dashboard"];
+const protected_routes = ["/dashboard", "/membership"];
 
 function add_security_headers(response) {
   const type = response.headers.get("content-type");
@@ -53,7 +53,9 @@ export async function handle({ event, resolve }) {
   log_message(event.platform, app_env, place, "info", "hook start, to page: " + event.url.pathname);
 
   const login_auth_token = event.cookies.get("login_auth_token");
-  const is_protected_route = event.url.pathname.includes(protected_routes);
+  const is_protected_route = protected_routes.some((route) =>
+    event.url.pathname.startsWith(route)
+  );
   // /dashboard, /dashboard/*, /dashboard/anything => protected
 
   if (is_protected_route && !login_auth_token) {

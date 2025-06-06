@@ -292,6 +292,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
 - Functionality
   - Add actual functionality for your service.
   - Replace the dashboard with real content (`/src/routes/(admin)/dashboard/(menu)/+page.svelte`).
+  - Customize the membership area (`/src/routes/(admin)/membership/+page.svelte`).
   - Add necessary documentation pages for your service.
 
 ## Icons

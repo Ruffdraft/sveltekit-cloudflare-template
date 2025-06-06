@@ -22,7 +22,7 @@
         <a href="/benefits" class="btn btn-ghost text-base font-bold">Benefits</a>
       </li>
       <li class="sm:mx-1">
-        <a href="/upload" class="btn btn-ghost text-base font-bold">Packet Upload</a>
+        <a href="/dashboard/packet-capture" class="btn btn-ghost text-base font-bold">Packet Upload</a>
       </li>
       <li class="sm:mx-1">
         <a href="/pricing" class="btn btn-ghost text-base font-bold">Pricing</a>
@@ -73,7 +73,7 @@
           <a href="/benefits" class="btn btn-ghost text-base font-bold">Benefits</a>
         </li>
         <li>
-          <a href="/upload" class="btn btn-ghost text-base font-bold">Packet Upload</a>
+          <a href="/dashboard/packet-capture" class="btn btn-ghost text-base font-bold">Packet Upload</a>
         </li>
         <li>
           <a href="/pricing" class="btn btn-ghost text-base font-bold"
@@ -113,7 +113,7 @@
         <a class="link link-hover my-1" href="/blog">Blog</a>
         <a class="link link-hover my-1" href="/about">About</a>
         <a class="link link-hover my-1" href="/benefits">Benefits</a>
-        <a class="link link-hover my-1" href="/upload">Packet Upload</a>
+        <a class="link link-hover my-1" href="/dashboard/packet-capture">Packet Upload</a>
       <a class="link link-hover my-1" href="/contact-us">Contact Us</a>
       <a
         class="link link-hover my-1"

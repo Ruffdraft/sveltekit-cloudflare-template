@@ -1,6 +1,10 @@
 <script>
+  import { WEBSITE_NAME } from "$config";
+  import { getContext } from "svelte";
   import { parse_pcap } from '$lib/tools/pcap';
   import { onMount, tick } from 'svelte';
+  let dashboard_section = getContext("dashboard_section");
+  dashboard_section.set("packet-capture");
   let file;
   let topology = null;
 
@@ -90,7 +94,7 @@
 </script>
 
 <svelte:head>
-  <title>Packet Upload - Tentrait ltd</title>
+  <title>Packet Capture - {WEBSITE_NAME}</title>
 </svelte:head>
 
 <div class="max-w-2xl mx-auto p-4">

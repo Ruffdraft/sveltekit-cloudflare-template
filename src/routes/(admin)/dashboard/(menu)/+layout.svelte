@@ -186,6 +186,18 @@
       </li>
       <li>
         <a
+          href="/dashboard/packet-capture"
+          class={dashboard_section === "packet-capture" ? "active" : ""}
+          on:click={close_drawer}
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="none" fill="none">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Packet Capture
+        </a>
+      </li>
+      <li>
+        <a
           href="/dashboard/settings"
           class={dashboard_section === "settings" ? "active" : ""}
           on:click={close_drawer}

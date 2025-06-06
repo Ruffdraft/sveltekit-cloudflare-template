@@ -28,6 +28,9 @@
         <a href="/pricing" class="btn btn-ghost text-base font-bold">Pricing</a>
       </li>
       <li class="sm:mx-1">
+        <a href="/membership" class="btn btn-ghost text-base font-bold">Members Area</a>
+      </li>
+      <li class="sm:mx-1">
         <a
           href="/sign-in"
           class="btn btn-outline btn-primary text-base font-bold">Sign In</a
@@ -81,6 +84,10 @@
           >
         </li>
         <li>
+          <a href="/membership" class="btn btn-ghost text-base font-bold"
+            >Members Area</a>
+        </li>
+        <li>
           <a
             href="/sign-in"
             class="btn btn-outline btn-primary text-base font-bold">Sign In</a
@@ -110,7 +117,8 @@
     <nav>
       <span class="footer-title opacity-80">Explore</span>
       <a class="link link-hover my-1" href="/pricing">Pricing</a>
-        <a class="link link-hover my-1" href="/blog">Blog</a>
+      <a class="link link-hover my-1" href="/membership">Members Area</a>
+      <a class="link link-hover my-1" href="/blog">Blog</a>
         <a class="link link-hover my-1" href="/about">About</a>
         <a class="link link-hover my-1" href="/benefits">Benefits</a>
         <a class="link link-hover my-1" href="/dashboard/packet-capture">Packet Upload</a>

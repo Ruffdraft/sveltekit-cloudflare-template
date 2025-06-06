@@ -158,6 +158,7 @@
             class="max-w-sm mx-auto p-6 rounded-lg md:card md:card-bordered md:shadow-lg space-y-6 mt-5 min-w-[350px]"
           >
             <h1 class="text-2xl font-bold mb-2">Sign Up</h1>
+            <p class="text-sm mb-2">Create an account to secure your operations and stay compliant.</p>
             <p class="mb-4">
               Already have an account? <a href="/sign-in" class="underline"
                 >Sign in</a

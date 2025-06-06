@@ -92,6 +92,7 @@
             class="max-w-sm mx-auto p-6 rounded-lg md:card md:card-bordered md:shadow-lg space-y-6 mt-5 min-w-[350px]"
           >
             <h1 class="text-2xl font-bold mb-2">Forgot Password</h1>
+            <p class="text-sm mb-2">We'll help you regain access securely.</p>
             {#if error_message}
               <div role="alert" class="px-2 border-l-4 border-error text-error">
                 {error_message}

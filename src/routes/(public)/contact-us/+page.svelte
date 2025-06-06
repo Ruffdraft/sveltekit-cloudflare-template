@@ -107,6 +107,9 @@
         <li>Get a quote</li>
         <li>Answer any technical questions you have</li>
       </ul>
+      <p>
+        Learn how investing in security today helps you comply with the UK's new IT/OT guidelines and prevents costly regulatory penalties.
+      </p>
       <p>Once you complete the form, we'll reach out to you!</p>
       <p class="text-sm pt-8">
         Your information will not be shared with any third parties.

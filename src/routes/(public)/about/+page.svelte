@@ -14,6 +14,9 @@
     <p>
       Tentrait Ltd develops intelligent tools that simplify complex infrastructure challenges — from OT-aware packet analysis to secure access segmentation and scalable SaaS platforms. Built on modern cloud architecture, our solutions empower organisations to visualise, secure, and optimise their operations without disruption.
     </p>
+    <p>
+      We help UK organisations comply with the latest IT/OT security objectives published by the UK government, reducing the risk of costly penalties for non-compliance.
+    </p>
 
     <h2 class="font-bold mt-8 mb-4">About Tentrait Ltd</h2>
     <p>
@@ -56,6 +59,7 @@
       <li><strong>Built by engineers, not marketers</strong> – We solve real problems with real tools, tested in the field.</li>
       <li><strong>Intelligence-first design</strong> – We combine protocol-level insight with usability — not just alerts, but clarity.</li>
       <li><strong>Modern cloud stack</strong> – We leverage the Cloudflare and Azure ecosystems for security, scalability, and cost-efficiency.</li>
+      <li><strong>Compliance built in</strong> – Our tooling aligns with the UK government's latest IT/OT security objectives so you avoid regulatory fines.</li>
       <li><strong>Partner-ready</strong> – We’re built to integrate — with your existing stack, your vendors, and your team.</li>
     </ul>
   </article>

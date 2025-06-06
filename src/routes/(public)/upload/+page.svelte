@@ -95,6 +95,7 @@
 
 <div class="max-w-2xl mx-auto p-4">
   <h1 class="text-2xl font-bold mb-4">Wireshark Packet Analysis</h1>
+  <p class="mb-2">Upload packet captures to quickly map device interactions and uncover gaps against UK IT/OT security objectives.</p>
   <input type="file" accept=".pcap" on:change={handleFile} class="file-input file-input-bordered" />
   {#if topology}
     <div class="mt-4">

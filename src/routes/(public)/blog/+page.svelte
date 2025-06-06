@@ -24,7 +24,7 @@
       />
     </a>
   </div>
-  <div class="text-lg text-center">A demo blog with sample content.</div>
+  <div class="text-lg text-center">Articles on staying compliant and avoiding unnecessary security costs.</div>
 
   {#each sorted_blog_posts as post}
     <a href={post.link}>

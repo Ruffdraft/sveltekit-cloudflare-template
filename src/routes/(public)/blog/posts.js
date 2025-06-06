@@ -2,7 +2,7 @@ import { WEBSITE_NAME } from "$config";
 
 export const blog_info = {
   name: WEBSITE_NAME + " Blog",
-  description: "A sample blog",
+  description: "Insights on UK IT/OT security compliance and how strong defences save money",
 };
 
 // Update this list with the actual blog post list
@@ -10,20 +10,20 @@ export const blog_info = {
 const blog_posts = [
   {
     title: "Example Blog Post 3",
-    description: "Even more example content, check it out!",
+    description: "Visibility tools for UK OT compliance",
     link: "/blog/wonderful-post",
     date: "2024-01-20",
   },
   {
     title: "Example Blog Post 2",
-    description: "More example content, check it out!",
+    description: "How security spending prevents penalties",
     link: "/blog/awesome-post",
     date: "2023-12-23",
   },
   {
     title: "Example Blog Post",
     description:
-      "A sample blog post, showing the blog post list and individual post pages.",
+      "Meeting the UK's latest IT/OT objectives",
     link: "/blog/example-post",
     date: "2023-11-13",
   },

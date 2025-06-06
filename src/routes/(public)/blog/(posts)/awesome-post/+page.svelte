@@ -1,26 +1,5 @@
-<p class="lead">A sample post</p>
+<p class="lead">Security investments that pay for themselves</p>
 
-<p>
-  This is a sample blog post to demonstrate the blog engine. It shows some of
-  the formatting options included in the template.
-</p>
+<p>Every breach or compliance failure brings the risk of financial penalties and operational disruption. By following the UK government's security objectives and using tools that expose network blind spots, you reduce that risk dramatically.</p>
 
-<h3>Section Titles are great</h3>
-
-<p>As are more paragraphs.</p>
-
-<blockquote>
-  <p>Block quotes are styled</p>
-</blockquote>
-
-<pre><code class="language-bash"
-    ># Code blocks work too!
-npm install 
-</code></pre>
-
-<p>
-  Check out more formatting options like lists, headers, and more in <a
-    href="https://play.tailwindcss.com/uj1vGACRJA?layout=preview"
-    >the tailwind/typography docs</a
-  >.
-</p>
+<p>Costs saved from avoiding incidents far outweigh the expense of implementing proactive monitoring and access controls. Consider it an insurance policy for your critical infrastructure.</p>

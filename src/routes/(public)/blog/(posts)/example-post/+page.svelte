@@ -1,26 +1,5 @@
-<p class="lead">A sample post</p>
+<p class="lead">Meeting the UK's new IT/OT security objectives</p>
 
-<p>
-  This is a sample blog post to demonstrate the blog engine. It shows some of
-  the formatting options included in the template.
-</p>
+<p>The UK government recently released updated guidance for securing operational technology. Organisations that proactively comply not only strengthen their defences but also avoid significant fines for non-compliance.</p>
 
-<h3>Section Titles are great</h3>
-
-<p>As are more paragraphs.</p>
-
-<blockquote>
-  <p>Block quotes are styled</p>
-</blockquote>
-
-<pre><code class="language-bash"
-    ># Code blocks work too!
-npm install 
-</code></pre>
-
-<p>
-  Check out more formatting options like lists, headers, and more in <a
-    href="https://play.tailwindcss.com/uj1vGACRJA?layout=preview"
-    >the tailwind/typography docs</a
-  >.
-</p>
+<p>Investing in tooling that maps your infrastructure and highlights weak points is a cost-effective way to stay ahead of regulators. At Tentrait we build exactly that—helping you visualise traffic flows, detect anomalies and prove alignment with government policy.</p>

@@ -123,7 +123,8 @@
       <br />
 
       <div>
-        <h1 class="text-xl font-bold mb-6">Create New Password</h1>
+        <h1 class="text-xl font-bold mb-2">Create New Password</h1>
+        <p class="text-sm mb-4">Strong passwords keep your data safe and compliant.</p>
         <form
           class="form-widget"
           method="POST"

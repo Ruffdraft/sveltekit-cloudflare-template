@@ -154,6 +154,7 @@
 
         <div class="mt-6 md:mt-10 text-sm md:text-lg">
           Tentrait Ltd develops intelligent tools that simplify complex infrastructure challenges — from OT-aware packet analysis to secure access segmentation and scalable SaaS platforms. Built on modern cloud architecture, our solutions empower organisations to visualise, secure, and optimise their operations without disruption.
+          We focus on meeting the UK's latest IT/OT security objectives so you avoid expensive compliance penalties.
         </div>
 
       <div class="mt-6 md:mt-2">

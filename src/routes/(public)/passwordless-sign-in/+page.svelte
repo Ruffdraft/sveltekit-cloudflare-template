@@ -100,6 +100,7 @@
             class="max-w-sm mx-auto p-6 rounded-lg md:card md:card-bordered md:shadow-lg space-y-6 mt-5 min-w-[350px]"
           >
             <h1 class="text-2xl font-bold mb-2">Passwordless Sign In</h1>
+            <p class="text-sm mb-2">Quick authentication without compromising security.</p>
             <p class="mb-4">
               Don't have an account? <a href="/sign-up" class="underline"
                 >Sign up</a

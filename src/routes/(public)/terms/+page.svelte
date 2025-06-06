@@ -8,6 +8,7 @@
     <p class="text-center text-gray-500">Last updated January 01, 2024</p>
 
     <p class="text-center text-error">(For example purpose only)</p>
+    <p class="text-center">Our services are designed to help UK organisations meet current IT/OT security objectives and avoid regulatory penalties.</p>
 
     <h4 class="font-bold mt-8 mb-4">AGREEMENT TO OUR LEGAL TERMS</h4>
     <p class="text-base">We are {WEBSITE_NAME} ("Company," "we," "us," "our"), a company registered in Singapore.</p>

@@ -15,17 +15,22 @@
       Our cloud‑native platform consolidates your infrastructure, allowing you to scale without large capital expenses.
       Pay only for what you use and eliminate the hidden costs of maintaining on‑premise hardware.
     </p>
+    <p>
+      By meeting the UK government's latest IT/OT security objectives you avoid punitive fines and keep operations running smoothly. Security investments today save money tomorrow.
+    </p>
     <h2 class="font-bold mt-8 mb-4">Reduce Expenses</h2>
     <ul>
       <li>Lower upfront spend by leveraging Cloudflare’s global network.</li>
       <li>Minimise downtime with managed security and monitoring.</li>
       <li>Cut operational overhead through automation and real‑time insight.</li>
+      <li>Avoid fines by adhering to government security objectives for UK businesses.</li>
     </ul>
     <h2 class="font-bold mt-8 mb-4">Boost Revenue</h2>
     <ul>
       <li>Deploy new services faster to capture market opportunities.</li>
       <li>Gain visibility into performance trends to optimise resources.</li>
       <li>Focus on your core business while we handle infrastructure.</li>
+      <li>Prove compliance to win contracts that require strong security.</li>
     </ul>
   </article>
 </div>

@@ -289,6 +289,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Update the homepage layout `/src/routes/(public)/+layout.svelte`: customize design, delete unwanted pages from header and footer
   - Style: make it your own look and feel.
   - Update the favicon and other logo files in the `/static/` directory.
+  - Ensure logo image `alt` attributes use your site name, e.g. `alt="MySite logo"`.
 - Functionality
   - Add actual functionality for your service.
   - Replace the dashboard with real content (`/src/routes/(admin)/dashboard/(menu)/+page.svelte`).

@@ -136,7 +136,7 @@
         <img
           src="/images/logo-small-black.svg"
           class="w-[200px] mb-3"
-          alt="Logo"
+          alt="{WEBSITE_NAME} logo"
         />
         Welcome to {WEBSITE_NAME}. I hope you can find what you are looking for.
       </a>

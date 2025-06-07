@@ -93,7 +93,7 @@
       <a class="link link-hover my-1" href="/contact-us">Contact Us</a>
       <a
         class="link link-hover my-1"
-        href="https://github.com/zcsd/sveltekit-cloudflare-template"
+        href="https://github.com/zcsd/sveltekit-template"
         target="_blank">GitHub</a
       >
       <a class="link link-hover mb-1" href="/terms">Terms</a>

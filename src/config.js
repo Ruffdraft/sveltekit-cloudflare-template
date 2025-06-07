@@ -8,7 +8,7 @@ function get_turnstile_sitekey() {
     return "1x00000000000000000000AA"; // no need to change this
   } else {
     // in production mode, use your own site key
-    // This is the site key for the Turnstile service on Cloudflare,
+    // This is the site key for the Turnstile service,
     // which is okay to be public.
     return "0x4AAAAAAAVwJHWDABkhqpto"; // change this to your own site key
   }
@@ -18,7 +18,7 @@ export const TURNSTILE_SITEKEY = get_turnstile_sitekey();
 export const WEBSITE_NAME = "Just In Case"; // change this to your own website name
 export const APP_DOMAIN = "justincase.top"; // change this to your own domain
 export const WEBSITE_DESCRIPTION =
-  "The fast, serverless, open source, and full-stack website. Built with SvelteKit, Tailwind, DaisyUI, Stripe and Cloudflare Pages.";
+  "The fast, serverless, open source, and full-stack website. Built with SvelteKit, Tailwind, DaisyUI and Stripe.";
 
 export const LOGIN_TOKEN_TTL = 1 * 24 * (60 * 60); // the login token (cookie) will last for 1 day, in seconds
 export const MAGIC_LINK_TOKEN_TTL = 1 * 1 * (30 * 60); // the magic login link will last for 30 mins, in seconds

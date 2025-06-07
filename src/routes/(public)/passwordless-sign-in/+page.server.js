@@ -38,7 +38,7 @@ export const actions = {
     const form_data_raw = await request.formData();
     const form_data = Object.fromEntries([...form_data_raw]);
 
-    // validate the Cloudflare Turnstile token
+    // validate the Turnstile token
     const turnstile_token = form_data_raw.get("cf-turnstile-response");
     const res_validate_tt = await validate_turnstile_token(turnstile_token, platform.env.TURNSTILE_SECRET_KEY);
     if (res_validate_tt.error) {

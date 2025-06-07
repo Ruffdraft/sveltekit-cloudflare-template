@@ -58,7 +58,7 @@ export const actions = {
     const form_data_raw = await request.formData();
     const form_data = Object.fromEntries([...form_data_raw]);
 
-    // validate the Cloudflare Turnstile token
+    // validate the Turnstile token
     const turnstile_token = form_data_raw.get("cf-turnstile-response");
     const res_validate_tt = await validate_turnstile_token(
       turnstile_token,
@@ -108,7 +108,7 @@ export const actions = {
       referral_code: final_referral_code,
     };
 
-    const ip_address = request.headers.get("cf-connecting-ip"); // the domain must be proxied by Cloudflare
+    const ip_address = request.headers.get("cf-connecting-ip"); // the domain must be proxied by the platform
     const is_rate_limit_ok = await check_rate_limit(platform, place, ip_address, user_email);// check ip + email
     if (!is_rate_limit_ok) {
       await log_message(platform, app_env, place, "info", `deny the request due to rate limit, too frequent sign-up. ip:${ip_address}`, user_email);

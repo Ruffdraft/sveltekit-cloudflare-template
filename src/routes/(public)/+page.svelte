@@ -5,8 +5,8 @@
     {
       name: "Fast to deploy",
       description:
-        "Deploy on Cloudflare Pages with D1, KV, R2, Queues and Turnstile. Fully powered by Cloudflare platform.",
-      link: "https://developers.cloudflare.com/",
+        "Deploy on Pages with D1, KV, R2, Queues and Turnstile. Fully powered by the platform.",
+      link: "#",
       link_text: "Docs",
       new_page: true,
       svg_content: `<path d="M4.01207 15.7618L5.70156 10.6933C6.46758 8.39525 6.85059 7.24623 7.75684 7.03229C8.6631 6.81835 9.51953 7.67478 11.2324 9.38764L14.6114 12.7666C16.3242 14.4795 17.1807 15.3359 16.9667 16.2422C16.7528 17.1484 15.6038 17.5314 13.3057 18.2975L8.23724 19.987C5.47183 20.9088 4.08912 21.3697 3.35924 20.6398C2.62936 19.9099 3.09026 18.5272 4.01207 15.7618Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
@@ -41,7 +41,7 @@
     {
       name: "Secure Auth",
       description:
-        "Sessions cached in Cloudflare KV and stored in D1, highly customizable session management, and rate limiting.",
+        "Sessions cached in KV and stored in D1, highly customizable session management, and rate limiting.",
       svg_content: `<path d="M3 10.4167C3 7.21907 3 5.62028 3.37752 5.08241C3.75503 4.54454 5.25832 4.02996 8.26491 3.00079L8.83772 2.80472C10.405 2.26824 11.1886 2 12 2C12.8114 2 13.595 2.26824 15.1623 2.80472L15.7351 3.00079C18.7417 4.02996 20.245 4.54454 20.6225 5.08241C21 5.62028 21 7.21907 21 10.4167C21 10.8996 21 11.4234 21 11.9914C21 17.6294 16.761 20.3655 14.1014 21.5273C13.38 21.8424 13.0193 22 12 22C10.9807 22 10.62 21.8424 9.89856 21.5273C7.23896 20.3655 3 17.6294 3 11.9914C3 11.4234 3 10.8996 3 10.4167Z" stroke="currentColor" stroke-width="1.5"/>
     <circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
     <path d="M16 15C16 16.1046 16 17 12 17C8 17 8 16.1046 8 15C8 13.8954 9.79086 13 12 13C14.2091 13 16 13.8954 16 15Z" stroke="currentColor" stroke-width="1.5"/>`,
@@ -114,7 +114,7 @@
     {
       name: "Delightful Stack",
       description:
-        "Tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Cloudflare Pages/D1/KV/R2/Queues.",
+        "Tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Pages/D1/KV/R2/Queues.",
       svg_content: `<path d="M4.97883 9.68508C2.99294 8.89073 2 8.49355 2 8C2 7.50645 2.99294 7.10927 4.97883 6.31492L7.7873 5.19153C9.77318 4.39718 10.7661 4 12 4C13.2339 4 14.2268 4.39718 16.2127 5.19153L19.0212 6.31492C21.0071 7.10927 22 7.50645 22 8C22 8.49355 21.0071 8.89073 19.0212 9.68508L16.2127 10.8085C14.2268 11.6028 13.2339 12 12 12C10.7661 12 9.77318 11.6028 7.7873 10.8085L4.97883 9.68508Z" stroke="#1C274C" stroke-width="1.5"/>
     <path d="M5.76613 10L4.97883 10.3149C2.99294 11.1093 2 11.5065 2 12C2 12.4935 2.99294 12.8907 4.97883 13.6851L7.7873 14.8085C9.77318 15.6028 10.7661 16 12 16C13.2339 16 14.2268 15.6028 16.2127 14.8085L19.0212 13.6851C21.0071 12.8907 22 12.4935 22 12C22 11.5065 21.0071 11.1093 19.0212 10.3149L18.2339 10" stroke="#1C274C" stroke-width="1.5"/>
     <path d="M5.76613 14L4.97883 14.3149C2.99294 15.1093 2 15.5065 2 16C2 16.4935 2.99294 16.8907 4.97883 17.6851L7.7873 18.8085C9.77318 19.6028 10.7661 20 12 20C13.2339 20 14.2268 19.6028 16.2127 18.8085L19.0212 17.6851C21.0071 16.8907 22 16.4935 22 16C22 15.5065 21.0071 15.1093 19.0212 14.3149L18.2339 14" stroke="#1C274C" stroke-width="1.5"/>`,
@@ -122,7 +122,7 @@
     {
       name: "Scaleable",
       description:
-        "Handle new users and scale with horizontally scaling edge functions with Cloudflare.",
+        "Handle new users and scale with horizontally scaling edge functions.",
       svg_content: `<path d="M3 22H21" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M3 11C3 10.0572 3 9.58579 3.29289 9.29289C3.58579 9 4.05719 9 5 9C5.94281 9 6.41421 9 6.70711 9.29289C7 9.58579 7 10.0572 7 11V17C7 17.9428 7 18.4142 6.70711 18.7071C6.41421 19 5.94281 19 5 19C4.05719 19 3.58579 19 3.29289 18.7071C3 18.4142 3 17.9428 3 17V11Z" stroke="#1C274C" stroke-width="1.5"/>
     <path d="M10 7C10 6.05719 10 5.58579 10.2929 5.29289C10.5858 5 11.0572 5 12 5C12.9428 5 13.4142 5 13.7071 5.29289C14 5.58579 14 6.05719 14 7V17C14 17.9428 14 18.4142 13.7071 18.7071C13.4142 19 12.9428 19 12 19C11.0572 19 10.5858 19 10.2929 18.7071C10 18.4142 10 17.9428 10 17V7Z" stroke="#1C274C" stroke-width="1.5"/>
@@ -193,21 +193,21 @@
         >
         and
         <a
-          href="https://developers.cloudflare.com/pages"
+          href="#"
           class="link font-bold"
           target="_blank"
         >
-          Cloudflare Pages</a
+          Pages</a
         >.
       </div>
 
       <div class="mt-6 md:mt-2">
-        <a href="https://github.com/zcsd/sveltekit-cloudflare-template" target="_blank">
+        <a href="https://github.com/zcsd/sveltekit-template" target="_blank">
           <button class="btn btn-primary btn-sm px-6"
             >★ us on Github</button
           >
         </a>
-        <a href="https://github.com/zcsd/sveltekit-cloudflare-template/blob/master/README.md" target="_blank">
+        <a href="https://github.com/zcsd/sveltekit-template/blob/master/README.md" target="_blank">
           <button class="btn btn-outline btn-primary btn-sm px-6 mt-3 mx-2"
             >Read the Docs</button
           >
@@ -285,14 +285,14 @@
       <div
         class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-warning to-accent mt-4"
       >
-        Powered by Cloudflare Stack
+        Powered by a serverless stack
       </div>
       <div
         class="flex flex-col lg:flex-row mt-8 gap-6 place-content-center content-center"
       >
         <div class="w-full lg:w-auto">
           <a
-            href="https://developers.cloudflare.com/"
+            href="#"
             target="_blank"
             class="link"
           >
@@ -300,9 +300,9 @@
               class="card flex justify-center items-center mx-auto w-[300px]"
             >
               <img
-                src="/images/Cloudflare_Logo.svg"
+                src="/images/logo.svg"
                 class="aspect-[512/169]"
-                alt="Cloudflare Logo"
+                alt="Logo"
               />
             </div>
           </a>
@@ -311,12 +311,12 @@
           <div class="my-auto">
             <div class="px-4 text-lg md:text-xl">
               <a
-                href="https://developers.cloudflare.com/"
+                href="#"
                 class=""
                 target="_blank"
               >
                 <span class="underline decoration-secondary decoration-[3px]">
-                  Cloudflare Pages, Workers, D1 Database, KV, R2 Storage, Queues
+                  Pages, Workers, D1 Database, KV, R2 Storage, Queues
                   and Turnstile
                 </span> are used to power the website. One platform for everything.
               </a>

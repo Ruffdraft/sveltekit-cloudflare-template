@@ -1,5 +1,5 @@
 // rate limiting
-// Cloudflare KV is used for rate limiting, it's not consistent for all edge servers (within 60s).
+// KV is used for rate limiting; it's not consistent for all edge servers (within 60s).
 // We can accept the inconsistency for the rate limiting, roughly consistent is enough.
 import { dev } from "$app/environment";
 import { log_message } from "$lib/server/log";

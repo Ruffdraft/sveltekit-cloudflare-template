@@ -21,10 +21,10 @@ export async function log_message(platform, app_env, place, type, message, user 
         timestamp: Date.now(),
       };
       
-      // to send notification to Lark group chat, you need to set `LARK_BOT_URL` environment variable in Cloudflare dashboard
+      // to send notification to Lark group chat, you need to set `LARK_BOT_URL` environment variable in the dashboard
       await send_error_to_lark(platform, log);
-      // to store the error logs in R2, you need to deploy a Cloudflare Worker for queues consumer,
-      // and bind the queue in Cloudflare dashboard
+      // to store the error logs in R2, you need to deploy a worker for queue consumption,
+      // and bind the queue in the dashboard
       await platform.env.ERROR_QUEUE.send(log);
     }
   }
@@ -61,8 +61,8 @@ async function send_error_to_lark(platform, log) {
               },
               {
                 tag: "a",
-                text: "Go to Cloudflare now.",
-                href: "https://dash.cloudflare.com/",
+                text: "Open the dashboard.",
+                href: "#",
               },
             ],
           ],

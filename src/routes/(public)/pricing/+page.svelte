@@ -11,16 +11,19 @@
       name: "Feature 1",
       free_included: true,
       pro_included: true,
+      enterprise_included: true,
     },
     {
       name: "Feature 2",
       free_included: false,
       pro_included: true,
+      enterprise_included: true,
     },
     {
       name: "Feature 3",
       free_string: "3",
       pro_string: "Unlimited",
+      enterprise_string: "Unlimited",
     },
     {
       name: "Section 2",
@@ -30,11 +33,13 @@
       name: "Feature 4",
       free_included: true,
       pro_included: true,
+      enterprise_included: true,
     },
     {
       name: "Feature 5",
       free_included: false,
       pro_included: true,
+      enterprise_included: true,
     },
   ]
 </script>
@@ -148,13 +153,14 @@
             <th></th>
             <th class="text-center">Free</th>
             <th class="text-center">Pro</th>
+            <th class="text-center">Enterprise</th>
           </tr>
         </thead>
         <tbody>
           {#each plan_features as feature}
             {#if feature.header}
               <tr class="bg-base-200 font-bold">
-                <td colspan="3">{feature.name} </td>
+                <td colspan="4">{feature.name} </td>
               </tr>
             {:else}
               <tr class="relative">
@@ -182,6 +188,25 @@
                   {#if feature.pro_string}
                     {feature.pro_string}
                   {:else if feature.pro_included}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 ml-2 inline text-success"
+                    >
+                      <use href="#checkcircle" />
+                    </svg>
+                  {:else}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[26px] h-[26px] inline text-base-200"
+                    >
+                      <use href="#nocircle" />
+                    </svg>
+                  {/if}
+                </td>
+                <td class="text-center">
+                  {#if feature.enterprise_string}
+                    {feature.enterprise_string}
+                  {:else if feature.enterprise_included}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-8 h-8 ml-2 inline text-success"

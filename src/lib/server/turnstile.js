@@ -36,7 +36,7 @@ export async function validate_turnstile_token(token, secret) {
   } catch (err) {
     return {
       error: true,
-      message: "Unknown or Cloudflare error.",
+      message: "Unknown server error.",
     };
   }
 }

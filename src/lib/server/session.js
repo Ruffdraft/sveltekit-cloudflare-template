@@ -59,7 +59,7 @@ export async function update_login_sessions(platform, uuid, update_info) {
   try {
     for (let i = 0; i < sessions_ids.length; i++) {
       // update KV one by one
-      // Cloudflare does not support KV bulk writes from within a Worker.
+      // The platform does not support KV bulk writes from within a worker.
       await platform.env.LOGIN_SESSION_CACHE.put(
         sessions_ids[i],
         JSON.stringify(new_session_info),

@@ -1,4 +1,4 @@
-/*Cloudflare D1 SQLite*/
+/*D1 SQLite*/
 CREATE TABLE user_account (
     uuid TEXT PRIMARY KEY,
     nickname TEXT NOT NULL,

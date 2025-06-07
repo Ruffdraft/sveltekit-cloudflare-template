@@ -12,9 +12,9 @@
 
 <br/>
 
-# Just In Case: A SvelteKit & Cloudflare Template
+# Just In Case: A SvelteKit Template
 
-If you are looking for a SvelteKit template that perfectly integrates Cloudflare Pages & KV & D1 database & Workers & Queues & R2 storage & Turnstile CAPTCHA (**One Platform for Everything**), then you are in the right place. You can build a fully functional website with authentication, subscriptions, profile, blog, contact-us and more using this template. It's designed for SaaS, membership, or subscription-based services.
+If you are looking for a SvelteKit template that perfectly integrates Pages, KV, D1 database, Workers, Queues, object storage and Turnstile CAPTCHA (**One Platform for Everything**), then you are in the right place. You can build a fully functional website with authentication, subscriptions, profile, blog, contact-us and more using this template. It's designed for SaaS, membership, or subscription-based services.
 
 ## Tech Stack
 
@@ -22,14 +22,14 @@ If you are looking for a SvelteKit template that perfectly integrates Cloudflare
 - CSS / Styling
   - Framework: TailwindCSS
   - Component library: DaisyUI
-- Hosting Stack (Everything in Cloudflare)
-  - Host: Cloudflare Pages
-  - Database: Cloudflare D1
-  - KV: Cloudflare KV
-  - Storage: Cloudflare R2
-  - Queue: Cloudflare Queues
-  - Compute: Cloudflare Workers
-  - CAPTCHA: Cloudflare Turnstile
+- Hosting Stack (One platform)
+  - Host: Pages
+  - Database: D1
+  - KV: KV
+  - Storage: R2
+  - Queue: Queues
+  - Compute: Workers
+  - CAPTCHA: Turnstile
 - Payments
   - Stripe Checkout
   - Stripe Portal
@@ -59,11 +59,11 @@ You are highly recommended to explore all the features using the fully functiona
 
 ## Features
 
-- Hosting: One Cloudflare platform for everything. Easy to manage, deploy, and scale. All services are integrated and work seamlessly.
+- Hosting: One platform for everything. Easy to manage, deploy, and scale. All services are integrated and work seamlessly.
 
 - Authentication: Sign up, email verification, password sign in, magic-link sign in, forgot password, change password, delete account, and more.
 
-- Fast: Cloudflare global CDN and KV cache bring the amazing speed and performance, SveteKit also brings the fast loading and smooth interaction.
+- Fast: A global CDN and KV cache bring the amazing speed and performance, SveteKit also brings the fast loading and smooth interaction.
 
 - Security: Session Management, rate limiting, error logging, CSRF protection, Turnstile CAPTCHA, security related notification, and more.
 
@@ -79,7 +79,7 @@ You are highly recommended to explore all the features using the fully functiona
 
 **Zero-Cost** is achievable for using this template. Here are all the services used in the demo website:
 
-- [Cloudflare](https://developers.cloudflare.com/): Pages, Workers, D1, KV, R2, Turnstile are free to use. Cloudflare Queues requires the Workers Paid plan($5/month) to use, but you can avoid using it by disabling the error logging feature, so that you can achieve Zero-Cost. It's recommended to subscribe to the Workers Paid plan for higher quota and better performance, totally worth it.
+- Platform services (Pages, Workers, D1, KV, R2, Turnstile) are free to use. Queues requires the Workers paid plan ($5/month), but you can avoid using it by disabling the error logging feature.
 
 - [Resend](https://resend.com/) Email API: Free plan can support up to 3000 emails per month (100 emails per day) and one custom domain which is enough for small websites. You may consider upgrading to Pro plan if you need more. And you can also replace it with other email services, it's very easy to modify the code.
 
@@ -109,7 +109,7 @@ Then, prepare and create the necessary services:
 
 - Create [Resend](https://resend.com/) email service and get the API key (for `RESEND_API_KEY`), refer to [Setup Resend Email API section](#setup-resend-email-api).
 - Create [Stripe](https://stripe.com/) account and get the API key (for `PRIVATE_STRIPE_API_KEY`), refer to [Setup Stripe Billing section](#setup-stripe-billing).
-- Prepare a local Cloudflare D1 database and tables:
+- Prepare a local D1 database and tables:
   
   ```
   # read all comments explained in example-wrangler.toml file before proceeding
@@ -159,36 +159,36 @@ $ npx wrangler pages dev --ip 0.0.0.0 --port 8787 --live-reload .\.svelte-kit\cl
 # local ENV, KV, D1 will be used
 ```
 
-For the local development, error logging feature is not available, because you can see all the logs in the terminal. Error logging feature is only available in the production environment, it requires Cloudflare Queues, R2 Storage and Lark Bot Webhook services.
+For the local development, error logging feature is not available, because you can see all the logs in the terminal. Error logging feature is only available in the production environment, and it requires Queues, R2 Storage and Lark Bot Webhook services.
 
 To deploy the website live, follow the below steps to do the necessary setup.
 
-### Setup Cloudflare
+### Setup Platform
 
-- Create a [Cloudflare](https://www.cloudflare.com/) account and add (or buy) a domain(eg, `justincase.top`) in Cloudflare. Free plan is ok, but Worker Paid plan ($5/month) is required for error logging feature (optional, can be disabled).
+- Create an account and add (or buy) a domain (eg, `justincase.top`). Free plan is ok, but a Worker paid plan ($5/month) is required for error logging feature (optional, can be disabled).
 
-- Create two new Cloudflare KV namespace named `login_session_cache` and `rate_limit` via Cloudflare dashboard or wrangler CLI. 
+- Create two new KV namespaces named `login_session_cache` and `rate_limit` via the dashboard or wrangler CLI.
 
 - Setup D1 database
-  - [Create a new Cloudflare D1 database](https://developers.cloudflare.com/d1/get-started/#3-create-a-database) named `example_db` via Cloudflare dashboard or wrangler CLI. 
+  - Create a new D1 database named `example_db` via the dashboard or wrangler CLI.
   - Create all the tables in `example_db` database. You can use the `/db_schema/schema.sql` file to create the tables. It's recommended to do it in Wrangler CLI, as it's more convenient and efficient. Here is the command (execute it in the project root directory): `npx wrangler d1 execute example_db --remote --file=./db_schema/schema.sql`.
 
 - Setup Queues (optional)
-  - Create a new Cloudflare R2 bucket named `error-bucket` via Cloudflare dashboard, it's used for storing error logs.
-  - Create a new Cloudflare Queue named `error-queue` via Cloudflare dashboard, it's used for queuing error logs processing.
-  - Create a Cloudflare Worker (consumer worker) to consume the error logs from the queue. You can use the Worker project in the `/workers/error_logger` directory. Just execute the command `npx wrangler deploy` in the `/workers/error_logger` directory to deploy the worker. All the necessary bindings are done in the `/workers/error_logger/wrangler.toml` file, no need to bind them in the Cloudflare dashboard again.
+  - Create a new R2 bucket named `error-bucket` via the dashboard, it's used for storing error logs.
+  - Create a new Queue named `error-queue` via the dashboard, it's used for queuing error logs processing.
+  - Create a worker (consumer worker) to consume the error logs from the queue. You can use the Worker project in the `/workers/error_logger` directory. Just execute the command `npx wrangler deploy` in the `/workers/error_logger` directory to deploy the worker. All the necessary bindings are done in the `/workers/error_logger/wrangler.toml` file, no need to bind them in the dashboard again.
 
 - Setup Turnstile CAPTCHA
-  - Add the website (eg, `justincase.top`) to Turnstile in the Cloudflare dashboard. You can use the default settings, or customize it as you like. 
-  - Get the site key and secret key, change the site key (ok to public) in `get_turnstile_sitekey()` function of `/src/config.js` file, and add the secret key (keep it secure) as an environment variable `TURNSTILE_SECRET_KEY` in Cloudflare dashboard for production.
+  - Add the website (eg, `justincase.top`) to Turnstile in the dashboard. You can use the default settings, or customize it as you like.
+  - Get the site key and secret key, change the site key (ok to public) in `get_turnstile_sitekey()` function of `/src/config.js` file, and add the secret key (keep it secure) as an environment variable `TURNSTILE_SECRET_KEY` in the dashboard for production.
 
 ### Setup Resend Email API
 
 - Create a [Resend](https://resend.com/) account, free plan is good.
 
-- Add your domain (eg, `justincase.top`) in the Resend dashboard and set the required DNS records in the Cloudflare dashboard. Here I use the subdomain `mail.justincase.top` for email sending.
+- Add your domain (eg, `justincase.top`) in the Resend dashboard and set the required DNS records in the dashboard. Here I use the subdomain `mail.justincase.top` for email sending.
 
-- Create an API key in the Resend dashboard, and add it as an environment variable `RESEND_API_KEY` in (`.dev.vars` file locally, and Cloudflare dashboard for production).
+- Create an API key in the Resend dashboard, and add it as an environment variable `RESEND_API_KEY` in (`.dev.vars` file locally, and in the dashboard for production).
 
 ### Setup Lark Bot Webhook (Optional)
 
@@ -198,7 +198,7 @@ The Lark bot webhook is for error log notification feature. This is optional, yo
 
 - Create a group chat in Lark and [add the Lark bot to the group chat](https://www.larksuite.com/hc/en-US/articles/360048487736-use-bots-in-groups).
 
-- [Get the webhook URL in the Lark bot settings](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot), and add it as an environment variable `LARK_BOT_URL` in Cloudflare dashboard for production. Keep the webhook URL secure.
+- [Get the webhook URL in the Lark bot settings](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot), and add it as an environment variable `LARK_BOT_URL` in the dashboard for production. Keep the webhook URL secure.
 
 ### Setup Stripe Billing
 
@@ -211,11 +211,11 @@ The Lark bot webhook is for error log notification feature. This is optional, yo
   - Add pricing descriptions in dashboard for different prices to help you identify the product in the code better (eg,`Pro Monthly Subscription`, `Pro Yearly Subscription`, `Enterprise Monthly Subscription`, `Enterprise Yearly Subscription`). You can do it in this way: `Product catalog > Edit product (you want to add description for) > (find pricing option) Edit price > Advanced > Price description`.
 
 - Setup your Stripe API key
-  - Get your [Secret API](https://dashboard.stripe.com/test/apikeys) key, and add it as an environment variable `PRIVATE_STRIPE_API_KEY` in (`.dev.vars` file locally, and Cloudflare dashboard for production). Be sure to use test keys for development, and keep your production keys secret and secure.
+  - Get your [Secret API](https://dashboard.stripe.com/test/apikeys) key, and add it as an environment variable `PRIVATE_STRIPE_API_KEY` in (`.dev.vars` file locally, and in the dashboard for production). Be sure to use test keys for development, and keep your production keys secret and secure.
 
 - Setup your Stripe Webhook
   - Add your [Stripe webhook endpoint](https://dashboard.stripe.com/test/webhooks). Here I use `https://justincase.top/api/stripe-webhooks` for the webhook endpoint as an example. You can use your own domain and path. Select the events you want to listen to, here I use `invoice.paid` event to trigger the webhook, so the subscription status in database will be updated immediately after the renewal payment is successful, check the related code in `/src/routes/(admin)/api/stripe-webhooks/+server.js` file.
-  - Once the endpoint is created, you can reveal the signing secret in the webhook page. Add the webhook signing secret as an environment variable `STRIPE_WH_SECRET` in Cloudflare dashboard for production.
+  - Once the endpoint is created, you can reveal the signing secret in the webhook page. Add the webhook signing secret as an environment variable `STRIPE_WH_SECRET` in the dashboard for production.
 - Optional: theme your Stripe integration
   - [Customize your brand](https://dashboard.stripe.com/settings/branding) for Stripe Checkout and Portal pages. You can change the logo, colors, and more.
 - Update your pricing plan data to align to your stripe data
@@ -229,11 +229,11 @@ The Lark bot webhook is for error log notification feature. This is optional, yo
     - Optional: [setup a custom domain](https://dashboard.stripe.com/settings/custom-domains) (not free, $10/month) so Stripe pages use your own domain , recommended for real production use.
 - Repeat steps in production environment.
 
-### Deloyed to Cloudflare
+### Deployment
 
-This template is designed to be deployed on Cloudflare Pages, not on Vercel, Netlify, or other platforms.
+This template is designed to be deployed on Pages, not on Vercel, Netlify, or other platforms.
 
-Follow [Cloudflare's documentation](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/) and [SvelteKit's documentation](https://kit.svelte.dev/docs/adapter-cloudflare) to deploy it in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
+Follow the platform documentation and [SvelteKit's documentation](https://kit.svelte.dev/docs/adapter-cloudflare) to deploy it in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
 
 When prompted: add environment variables for your production environment, you have got the values from the previous steps. 
 
@@ -254,7 +254,7 @@ ONSITE_API_JWT_SECRET = ...     # JWT secret for onsite API auth
 
 You should [generate](https://delinea.com/resources/password-generator-it-tool) an at least 32 characters long random string for each JWT secret and keep them secure.
 
-Once first deployment is done, the website is still not fully functional. You need to bind the Cloudflare KV, D1, Queues services to the website in the Cloudflare dashboard. You can do it in this way: `Pages > your website > Settings > Functions > KV namespace bindings / D1 database bindings / Queue Producers bindings > Add binding`.
+Once first deployment is done, the website is still not fully functional. You need to bind the KV, D1, Queues services to the website in the dashboard. You can do it in this way: `Pages > your website > Settings > Functions > KV namespace bindings / D1 database bindings / Queue Producers bindings > Add binding`.
 
 ```
 KV namespace bindings:
@@ -268,7 +268,7 @@ Queue Producers bindings (required if you want to use error logging feature):
 
 After binding the services, you need the retry deployment to make everything reload. Now the website should be fully functional and live. The website will update automatically when you push new code to the main branch in GitHub.
 
-Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-us/application-services/products/analytics/) for usage metrics.
+Optional: enable analytics in the dashboard for usage metrics.
 
 ### Add your content!
 
@@ -300,4 +300,4 @@ Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/coll
 
 ## Credits
 
-Part of the UI and documentation for this project is originally from [CMSaasStarter](https://github.com/CriticalMoments/CMSaasStarter), which I have modified and enhanced with new features. While CMSaasStarter uses services from Supabase, I have replaced them with Cloudflare services and implemented different logic. If you prefer to use Supabase, you can check out the original project, which is also a great choice.
+Part of the UI and documentation for this project is originally from [CMSaasStarter](https://github.com/CriticalMoments/CMSaasStarter), which I have modified and enhanced with new features. While CMSaasStarter uses services from Supabase, I have replaced them with alternative services and implemented different logic. If you prefer to use Supabase, you can check out the original project, which is also a great choice.

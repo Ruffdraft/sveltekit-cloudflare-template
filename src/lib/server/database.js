@@ -1,4 +1,4 @@
-// Cloudflare D1 Database operations
+// D1 database operations
 // check the db schema in /db_schema/schema.sql
 import parser from "ua-parser-js";
 

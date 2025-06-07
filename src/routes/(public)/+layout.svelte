@@ -6,8 +6,8 @@
 
 <div class="navbar bg-base-100 container mx-auto">
   <div class="flex-1">
-    <a class="mx-4 normal-case text-2xl font-bold" href="/">
-      {WEBSITE_NAME}
+    <a class="mx-4 normal-case text-2xl font-bold flex items-center" href="/">
+      <img src="/images/tentrait-logo.svg" alt="{WEBSITE_NAME} logo" class="h-8" />
     </a>
   </div>
   <div class="flex-none">
@@ -134,9 +134,9 @@
       <span class="footer-title opacity-80">Website</span>
       <a href="/" class="link link-hover max-w-[260px]">
         <img
-          src="/images/logo-small-black.svg"
+          src="/images/tentrait-logo.svg"
           class="w-[200px] mb-3"
-          alt="Logo"
+          alt="Tentrait logo"
         />
         Welcome to {WEBSITE_NAME}. I hope you can find what you are looking for.
       </a>

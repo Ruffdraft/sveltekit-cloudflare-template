@@ -71,7 +71,7 @@ You are highly recommended to explore all the features using the fully functiona
 
 - SEO Friendly: Server-Side Rendering, SEO metadata, Blog and RSS feed.
 
-- Media Feed: Aggregates the latest IT/OT security headlines from public RSS feeds.
+- Media Feed: Aggregates the latest IT/OT security headlines from public RSS feeds and displays them on the `/news` page.
 
 - Highly Customizable: Less dependencies used, easy to modify, and extend. No auth library used, DIY for better control.
 

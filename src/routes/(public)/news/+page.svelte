@@ -17,7 +17,7 @@
     <ul class="space-y-4">
       {#each data.news as item}
         <li class="border-b pb-2">
-          <a href={item.link} target="_blank" rel="noreferrer" class="text-lg text-primary underline">
+          <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-lg text-primary underline">
             {item.title}
           </a>
           <div class="text-sm text-slate-500">
